@@ -25,7 +25,7 @@ a {
 
 body {
 	line-height: 1;
-	background: url('images/white_texture.png');
+	background: url('white_texture.png');
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 ol, ul {
@@ -97,7 +97,7 @@ body:before {
 	}
 
 #logoSearchBar {
-	background: url("images/logoSearchBar_background.png") no-repeat;
+	background: url("logoSearchBar_background.png") no-repeat;
 	width: 906px;
 	height: 52px;
 	margin: -4px auto 0 auto;
@@ -112,7 +112,7 @@ body:before {
 		margin: 0;
 	}
 	#searchField {
-		background: url("images/search_field_bg.png") no-repeat;
+		background: url("search_field_bg.png") no-repeat;
 		border: none;
 		height: 32px;
 		width: 459px;
@@ -122,7 +122,7 @@ body:before {
 		font-size: 0.9em;
 	}
 	#submitBtn {
-		background: url("images/searchBtnSprite.jpg") 0 0;
+		background: url("searchBtnSprite.jpg") 0 0;
 		border: none;
 		padding: 6px 28px;
 		width: 107px;
@@ -133,10 +133,10 @@ body:before {
 		text-shadow: 1px 1px 1px #444;
 	}
 	#submitBtn:hover {
-		background: url("images/searchBtnSprite.jpg") 0 -31px;
+		background: url("searchBtnSprite.jpg") 0 -31px;
 	}
 	#submitBtn:active {
-		background: url("images/searchBtnSprite.jpg") 0 -62px;
+		background: url("searchBtnSprite.jpg") 0 -62px;
 	}
 	
 #allNavigation {
@@ -164,7 +164,7 @@ body:before {
 			}
 			#nav li a:hover, #nav li.current a {
 				color: #fff;
-				background: url("images/nav_item_background.png") no-repeat;
+				background: url("nav_item_background.png") no-repeat;
 				border: none;
 			}
 	#sortNav {
@@ -473,21 +473,21 @@ body:before {
 				.stageImg, .stageImgCheckout {
 					font-family: Arial, Helvetica, Sans-serif;
 					color: #bbb;
-					background: url("images/stagesSprite.png") 0 0;
+					background: url("stagesSprite.png") 0 0;
 					width: 176px;
 					height: 28px;
 					padding: 11px 0 0 15px;
 					margin-left: -3px;
 				}
 				.stageImgCheckout {
-					background: url("images/checkoutSprite.png") no-repeat;
+					background: url("checkoutSprite.png") no-repeat;
 					width: 39px;
 				}
 			.buyStages li.stageDone .stageName {
 				color: #04a700;
 			}
 			.stageDone .stageImg {
-				background: url("images/stagesSprite.png") 0 38px;
+				background: url("stagesSprite.png") 0 38px;
 				text-indent: -3000px;
 			}
 			
@@ -704,7 +704,7 @@ body:before {
 
 /*** FOOTER ***/
 #footer {
-	background: url("images/footer_background.png");
+	background: url("footer_background.png");
 	overflow: hidden;
 	height: 42px;
 	clear: both;

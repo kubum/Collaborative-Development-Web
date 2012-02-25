@@ -6,11 +6,11 @@
 	<div id="header">
 		<div id="accountBar">
 			<p class="welcomeMessage"><%= image_tag 'icons/user.png' %>Hello, Username (username@email.com). <a href="#">Log out</a></p>
-			<p class="basketInfo"><img src="images/icons/cart.png"/> <a href="#">Your items: 0</a></p>
+			<p class="basketInfo"><%= image_tag 'icons/cart.png' %><a href="#">Your items: 0</a></p>
 		</div>
 	
 		<div id="logoSearchBar">
-			<div id="logo"><a href="#"><img src="images/logo.jpg" alt="Logotype" /></a></div>
+			<div id="logo"><a href="#"><%= image_tag 'logo.jpg', :alt => "Logotype" %></a></div>
 			<form id="search">
 				<input type="text" name="search" id="searchField" placeholder="Search..." />
 				<input type="submit" value="Search" id="submitBtn" />
@@ -47,8 +47,8 @@
 		<div class="slider-wrapper theme-default">
             <div class="ribbon"></div>
             <div id="slider" class="nivoSlider">
-				<a href="#"><img src="images/slider/halfLife.jpg" alt="" title="Half-Life 50% OFF of the price [promo 20/02/12 — 20/03/12]" /></a>
-                <a href="#"><img src="images/slider/nfs.jpg" alt="" title='Buy "Need for speed: The Run" get "Need for speed: Most wanted" for FREE!' /></a>
+				<a href="#"><%= image_tag 'slider/halfLife.jpg', :title => "Half-Life 50% OFF of the price [promo 20/02/12 — 20/03/12]" %></a>
+                <a href="#"><%= image_tag 'slider/nfs.jpg', :title => 'Buy "Need for speed: The Run" get "Need for speed: Most wanted" for FREE!' %></a>
             </div>
         </div>			
 		<div class="clearall"></div>
@@ -76,7 +76,7 @@
 		<div class="item">
 			<div class="nameDescImg">
 				<div class="imgDownlds">
-					<img src="images/itemImages/fifa.png" alt="item1" />
+				    <%= image_tag 'itemImages/fifa.png', :alt => 'item1' %>
 					<p class="downloadNum">13 994 downloads</p>
 				</div>
 				<div class="nameDescription">
@@ -102,7 +102,7 @@
 		<div class="item">
 			<div class="nameDescImg">
 				<div class="imgDownlds">
-					<img src="images/itemImages/halfLife.png" alt="item1" />
+				    <%= image_tag 'itemImages/halfLife.png', :alt => 'item1' %>
 					<p class="downloadNum">25 012 downloads</p>
 				</div>
 				<div class="nameDescription">
@@ -128,7 +128,7 @@
 		<div class="item">
 			<div class="nameDescImg">
 				<div class="imgDownlds">
-					<img src="images/itemImages/macOffice.png" alt="item1" />
+				    <%= image_tag 'itemImages/macOffice.png', :alt => 'item1' %>
 					<p class="downloadNum">17 400 downloads</p>
 				</div>
 				<div class="nameDescription">
