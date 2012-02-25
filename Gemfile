@@ -25,7 +25,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem "capybara"
   gem "rspec-rails", "~> 2.6"
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', "1.4.0"
 end
 
 # To use ActiveModel has_secure_password
