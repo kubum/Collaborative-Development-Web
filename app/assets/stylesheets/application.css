@@ -1,13 +1,732 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
-*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+a {
+	color: #1a7bdf;
+}
+
+body {
+	line-height: 1;
+	background: url('images/white_texture.png');
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearall {
+	clear: both;
+}
+
+@font-face {
+	font-family: PTSans.ttf;
+	src: url(fonts/PTSans.ttf);
+}
+
+body:before {
+	content: "";
+	position: fixed;
+	top: -10px;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+		-moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+			box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+	z-index: 100;
+}
+
+#container {
+	width: 900px;
+	margin: 0 auto;
+}
+
+/*** HEADER ***/
+#header {
+	clear: both;
+	margin: 0 0 10px 0;
+}
+
+#accountBar {
+	background-color: rgba(192,192,192,0.5);
+	font-size: 0.9em;
+	width: 870px;
+	height: 20px;
+	margin: 0 auto;
+	padding: 6px 10px;
+	overflow: hidden;
+}
+	p.welcomeMessage {
+		float: left;
+		display: block;
+		/*margin-right: 44%;*/
+	}
+	p.basketInfo {
+		float: right;
+	}
+
+#logoSearchBar {
+	background: url("images/logoSearchBar_background.png") no-repeat;
+	width: 906px;
+	height: 52px;
+	margin: -4px auto 0 auto;
+	overflow: hidden;
+}
+	#logo {
+		float: left;
+		margin: 14px 32px 0 15px;
+	}
+	#search {
+		padding: 0;
+		margin: 0;
+	}
+	#searchField {
+		background: url("images/search_field_bg.png") no-repeat;
+		border: none;
+		height: 32px;
+		width: 459px;
+		margin: 11px 0 0 0;
+		padding: 0 7px;
+		font-family: PTSans, Arial, Helvetica, Sans-serif;
+		font-size: 0.9em;
+	}
+	#submitBtn {
+		background: url("images/searchBtnSprite.jpg") 0 0;
+		border: none;
+		padding: 6px 28px;
+		width: 107px;
+		height: 31px;
+		font-family: Arial, Helvetica, Sans-serif;
+		font-size: 1em;
+		color: #fff;
+		text-shadow: 1px 1px 1px #444;
+	}
+	#submitBtn:hover {
+		background: url("images/searchBtnSprite.jpg") 0 -31px;
+	}
+	#submitBtn:active {
+		background: url("images/searchBtnSprite.jpg") 0 -62px;
+	}
+	
+#allNavigation {
+	width: 140px;
+	float: left;
+	padding: 0 5px;
+	margin-right: 0;
+}
+	#nav {
+		font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+		font-size: 1.1em;
+		margin: 6px 0 35px 0;
+	}
+		#nav li {
+			height: 26px;
+			width: 135px;
+			margin: 2px 0;
+		}
+			#nav li a {
+				color: #000;
+				text-decoration: none;
+				display: block;
+				padding: 3px 4px;
+				height: 26px;
+			}
+			#nav li a:hover, #nav li.current a {
+				color: #fff;
+				background: url("images/nav_item_background.png") no-repeat;
+				border: none;
+			}
+	#sortNav {
+		font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+		font-size: 1em;
+		margin: 0;
+	}
+		#sortNav .sortByTitle {
+			font-weight: bold;
+			color: #aaa;
+			border-bottom: 1px solid #ccc;
+			padding: 3px 4px;
+		}
+		#sortNav li {
+			padding: 3px 0;
+		}
+			#sortNav li a {
+				color: #000;
+				text-decoration: none;
+				display: block;
+				padding: 2px 4px;
+			}
+			#sortNav li a:hover, #sortNav li a.currentSort {
+				color: #fff;
+				background: #bbb;
+				border-radius: 3px;
+			}
+/*** END header ***/
+
+
+
+/*** CONTENT ***/
+#content {
+	overflow: hidden;
+	width: 750px;
+}
+	#itemsTitleBar {
+		background-color: rgba(190,190,190,0.5);
+		border-top: 1px solid #9d9d9d;
+		color: #585858;
+		font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+		font-size: 0.9em;
+		padding: 2px 5px;
+	}
+		#itemsTitleBar li {
+			float: left;
+			display: block;
+		}
+		.nameDesc {
+			width: 280px;
+			border-right: 1px solid #ababab;
+			padding: 2px 0;
+		}
+		.provider {
+			width: 135px;
+			border-right: 1px solid #ababab;
+			padding: 2px 5px;
+		}
+		.sortStock {
+			width: 147px;
+			border-right: 1px solid #ababab;
+			padding: 0 5px;
+		}
+			.sortStock p, .sortPrice p {
+				padding: 2px 0;
+			}
+			.sortStock p, .sortStock form, .sortPrice p, .sortPrice form {
+				float: left;
+			}
+			.sortStock form, .sortPrice form {
+				margin: -3px 0 0 0;
+				padding: 0;
+			}
+		.sortPrice {
+			width: 145px;
+			padding: 0 5px;
+		}
+		
+	.item {
+		clear: both;
+		height: 130px;
+		border-bottom: 1px solid #ddd;
+		margin: 5px 0;
+		padding: 0 0 5px 0;
+	}
+		.nameDescImg {
+			width: 280px;
+			height: 130px;
+			float: left;
+			padding: 0 5px 0 0;
+			border-right: 1px solid #ababab;
+		}
+			.imgDownlds {
+				float: left;
+				width: 130px;
+				margin: 0 4px 0 0;
+			}
+				.nameDescImg p.downloadNum {
+					font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+					color: #333;
+					text-shadow: 1px 1px 3px #bbb;
+					display: block;
+					margin: -24px 0 0 0;
+					text-align: center;
+				}
+			.nameDescription {
+				float: left;
+				width: 145px;
+			}
+				.nameDescription h3 {
+					margin: 6px 0 0 0;
+				}
+					.nameDescription h3 a {
+						text-decoration: none;
+					}
+					.nameDescription h3 a:hover {
+						text-decoration: underline;
+					}
+				.nameDescription p {
+					font-family: Arial, Helvetica, Sans-serif;
+					font-size: 0.8em;
+					margin: 10px 0 0 0;
+					line-height: 1.3em;
+				}
+
+		.providerInfo {
+			width: 135px;
+			height: 130px;
+			float: left;
+			padding: 0 5px;
+			border-right: 1px solid #ababab;
+		}
+			.providerInfo h4 {
+				font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+				margin: 5px 0 8px 0;
+			}
+			.providerInfo p {
+				font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+				font-size: 1em;
+				line-height: 1.2em;
+				color: #686868;
+				font-size: 0.9em;
+			}
+				.providerInfo p span {
+					text-decoration: underline;
+					color: #333;
+				}
+				.providerInfo p strong {
+					font-weight: bold;
+				}
+		
+		.stockLevel {
+			width: 147px;
+			height: 130px;
+			float: left;
+			padding: 0 5px;
+			border-right: 1px solid #ababab;
+		}
+			.stockLevel p {
+				text-align: center;
+				margin-top: 40%;
+			}
+			.stockLevel .inStock {
+				color: #00b211;
+			}
+			.stockLevel .outStock {
+				color: #ff8888;
+			}
+		
+		.price {
+			width: 160px;
+			height: 130px;
+			float: left;
+			text-align: center;
+		}
+			.price p {
+				margin-top: 36%;
+			}
+			.buyBtn {
+				text-decoration: none;
+				color: #fff;
+				text-shadow: 1px 1px 1px #777;
+				padding: 5px 10px;
+				border-radius: 8px;
+				box-shadow: 1px 1px 2px #777;
+				background: #2993e0;
+				border: 1px solid #75c3ff;
+			}
+			.buyBtn:hover {
+				background: #0a7ed0;
+			}
+			.buyBtn:active {
+				background: #015895;
+				color: #777;
+				text-shadow: 1px 1px 1px #333;
+			}
+	#paginator {
+		margin: 20px 0;
+		padding: 5px 0;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+		#paginator a {
+			text-decoration: none;
+			background: #3d87cd;
+			color: #fff;
+			padding: 5px 7px;
+			border-radius: 5px;
+			border: 1px solid #51a2ef;
+		}
+		#paginator a:hover {
+			background: #2e679d;
+		}
+		#paginator .previous {
+			float: left;
+			margin: 0 0 0 5px;
+		}
+		#paginator .next {
+			float: right;
+			margin: 0 10px;
+		}
+		
+	/*** ABOUT US PAGE ***/
+		h1 {
+			font-size: 1.5em;
+			margin: 5px 0 10px 0;
+			padding: 5px 0;
+			border-bottom: 1px solid #aaa;
+		}
+		#map {
+			margin: 0 10px 10px 0;
+			float: left;
+		}
+		.contactInfo {
+			float: left;
+			clear: right;
+			color: #444;
+		}
+			.contactInfo p {
+				margin: 5px 0 20px 0;
+			}
+			.contactInfo ul li.liTitle {
+				font-size: 1.1em;
+				color: #222;
+				margin: 0 0 5px 0;
+			}
+			.contactInfo ul li {
+				margin: 5px 0;
+			}
+		h2 {
+			font-size: 1.3em;
+			color: #777;
+			margin: 5px 0 10px 0;
+			padding: 5px 0;
+			border-bottom: 1px solid #888;
+		}
+		.team {
+			font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+			font-size: 1em;
+			color: #555;
+			margin: 0 0 30px 0;
+		}
+			.team li {
+				float: left;
+				margin: 0 2%;
+				text-align: center;
+			}
+		.writeUs {
+			margin: 0 0 20px 0;
+		}
+			.writeUs input, .writeUs textarea {
+				font-family: Arial, Helvetica, Sans-serif;
+				font-size: 0.9em;
+				border-radius: 4px;
+				margin: 0 1px 5px 1px;
+				border: 1px solid #bbb;
+				padding: 5px 2px;
+				width: 300px;
+				color: #444;
+			}
+	/*** END about us page ***/
+	
+	/*** SHOP PAGE ***/
+		.buyStages {
+			clear: both;
+			margin: 0 0 20px 10%;
+		}
+			.buyStages li {
+				float: left;
+			}
+				.buyStages li .stageName {
+					font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+					text-shadow: 1px 1px 1px #ccc;
+					color: #9e9e9e; /*active: #04a700*/
+					margin-left: -4%;
+				}
+				.buyStages li .itemsSelection {
+					margin-left: -13%;
+				}
+				.buyStages li .deliveryType {
+					margin-left: -11%;
+				}
+				.buyStages li .checkOutPos {
+					margin-left: -19%;
+				}
+				.stageImg, .stageImgCheckout {
+					font-family: Arial, Helvetica, Sans-serif;
+					color: #bbb;
+					background: url("images/stagesSprite.png") 0 0;
+					width: 176px;
+					height: 28px;
+					padding: 11px 0 0 15px;
+					margin-left: -3px;
+				}
+				.stageImgCheckout {
+					background: url("images/checkoutSprite.png") no-repeat;
+					width: 39px;
+				}
+			.buyStages li.stageDone .stageName {
+				color: #04a700;
+			}
+			.stageDone .stageImg {
+				background: url("images/stagesSprite.png") 0 38px;
+				text-indent: -3000px;
+			}
+			
+		.shopProviderTitle {
+			width: 110px;
+		}
+		.shopStockLevelTitle {
+			width: 110px;
+			padding: 2px 5px;
+		}
+		.shopPriceTitle {
+			width: 70px;
+			padding: 2px 5px;
+			border-right: 1px solid #ababab;
+		}
+		.shopQuantityTitle {
+			width: 60px;
+			padding: 2px 5px;
+			border-right: 1px solid #ababab;
+		}
+		.shopRemoveTitle {
+			padding: 2px 5px;
+		}
+	
+		.shopProviderInfo {
+			width: 110px;
+		}
+		.shopStockLevel {
+			width: 110px;
+		}
+			.shopStockLevel p {
+				text-align: center;
+				margin-top: 50%;
+			}
+		.shopPrice {
+			width: 80px;
+			border-right: 1px solid #ababab;
+			background-color: rgba(200,200,200,0.3);
+		}
+			.shopPrice p {
+				text-align: center;
+				margin-top: 68%;
+			}
+		.shopQuantity {
+			height: 130px;
+			width: 70px;
+			float: left;
+			border-right: 1px solid #ababab;
+			text-align: center;
+		}
+			.shopQuantity form {
+				margin-top: 70%;
+			}
+				.shopQuantity form input {
+					width: 40px;
+					height: 15px;
+					border-radius: 4px;
+					border: 1px solid #888;
+					padding: 5px 2px;
+				}
+		.shopRemove {
+			height: 130px;
+			width: 68px;
+			float: left;
+			border-right: 1px solid #ababab;
+			text-align: center;
+		}
+			.shopRemove p {
+				margin-top: 80%;
+			}
+				.shopRemove a {
+					color: #f10c0c;
+					font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+				}
+		
+		.summary {
+			display: block;
+			margin-left: 437px;
+			margin-bottom: 20px;
+		}
+			.summary p {
+				float: left;
+				padding: 10px 5px;
+				font-weight: bold;
+			}
+			.summary .sumAmount {
+				float: left;
+				text-align: center;
+				font-weight: bold;
+				width: 80px;
+				background-color: rgba(200,200,200,0.3);
+				padding: 10px 0;
+				border-right: 1px solid #ababab;
+				border-left: 1px solid #ababab;
+				border-bottom: 1px solid #ababab;
+			}
+			.continue {
+				float: right;
+				font-family: Arial, Helvetica, Sans-serif;
+				font-size: 0.9em;
+				text-decoration: none;
+				color: #fff;
+				text-shadow: 1px 1px 1px #777;
+				padding: 5px 10px;
+				margin: 5px 0;
+				border-radius: 4px;
+				box-shadow: 1px 1px 1px #777;
+				background: #2993e0;
+				border: 1px solid #75c3ff;
+			}
+			.continue:hover {
+				background: #0a7ed0;
+			}
+			.continue:active {
+				background: #015895;
+				color: #777;
+				text-shadow: 1px 1px 1px #333;
+			}
+	/*** END shop page ***/
+	
+	
+	/*** SINGLE PAGE ***/
+		.singleItem {
+			float: left;
+			padding: 5px 25px;
+		}
+			.singleItem h1 {
+				color: #333;
+			}
+			.singleImgDownlds {
+				float: left;
+				width: 130px;
+				height: 130px;
+				margin: 0 4px 0 0;
+			}
+				.singleImgDownlds p.downloadNum {
+					font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+					color: #333;
+					text-shadow: 1px 1px 3px #bbb;
+					display: block;
+					margin: -24px 0 0 0;
+					text-align: center;
+				}
+		.singleNameDescription {
+			float: left;
+			width: 600px;
+			padding-bottom: 5px;
+			margin: 5px 0 10px 5px;
+			border-bottom: 1px solid #aaa;
+		}
+			.singleNameDescription h3 {
+				color: #888;
+				border-bottom: 1px solid #aaa;
+				padding: 10px 0 5px 0;
+				margin: 0 0 5px 0;
+			}
+			.singleNameDescription p {
+				font-family: Arial, Helvetica, Sans-serif;
+				font-size: 0.9em;
+				line-height: 1.4em;
+			}
+		.singleProviderInfo {
+			float: left;
+			margin: 0;
+			height: 130px;
+			font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+			color: #555;
+			padding: 0 15px;
+			border-right: 1px solid #bababa;
+		}
+			.singleProviderInfo h4 {
+				font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+				margin: 5px 0 8px 0;
+			}
+			.singleProviderInfo p {
+				font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+				font-size: 1em;
+				line-height: 1.2em;
+				color: #686868;
+				font-size: 0.9em;
+			}
+				.singleProviderInfo p span {
+					text-decoration: underline;
+					color: #333;
+				}
+				.singleProviderInfo p strong {
+					font-weight: bold;
+				}
+		.singleStockLevel {
+			height: 130px;
+			float: left;
+			padding: 0 10px;
+			border-right: 1px solid #ababab;
+		}
+			.singleStockLevel p {
+				text-align: center;
+				margin-top: 57%;
+			}
+			.singleStockLevel .inStock {
+				color: #00b211;
+			}
+			.singleStockLevel .outStock {
+				color: #ff8888;
+			}
+		.singlePrice {
+			margin: 10px 0;
+			float: left;
+		}
+	/*** END single page ***/
+	
+/*** END content ***/
+
+
+
+/*** FOOTER ***/
+#footer {
+	background: url("images/footer_background.png");
+	overflow: hidden;
+	height: 42px;
+	clear: both;
+	font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
+	margin-top: 20px;
+}
+	#footer p {
+		margin: 13px 5px;
+		color: #575757;
+	}
+	#footer p.aboutUs {
+		float: right;
+		margin-right: 15px;
+	}
+		#footer p.aboutUs a {
+			text-decoration: none;
+		}
+		#footer p.aboutUs a:hover {
+			text-decoration: underline;
+		}
+	#footer p.year {
+		float: left;
+		margin-left: 48%;
+	}
+/*** END footer ***/
