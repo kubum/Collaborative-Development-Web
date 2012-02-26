@@ -9,7 +9,15 @@
 </head>
 <body>
     <div class="<%= controller.controller_name %>">
-        <%= yield %>
+        <div id="container">
+            
+            <%= yield %>
+            
+        	<div id="footer">
+    			<p class="year">2011 &ndash; 2012</p>
+    			<p class="aboutUs"><%= link_to "About us", about_path %></p>
+    		</div><!-- end #footer -->
+    	</div><!-- end #container -->
     </div>
 </body>
 </html>
