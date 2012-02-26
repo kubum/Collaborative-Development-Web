@@ -10,4 +10,12 @@ class HomeController < ApplicationController
   def single
 
   end
+
+  def shop
+
+  end
+
+  def products
+
+  end
 end
