@@ -1,0 +1,139 @@
+<div id="container">
+		<!--
+			Log in bar on the top. Basket if logged in.
+			Logo. Search.
+		-->
+		<div id="header">
+			<div id="accountBar">
+				<p class="welcomeMessage"><%= image_tag 'icons/user.png' %> Hello, Username (username@email.com). <a href="#">Log out</a></p>
+				<p class="basketInfo"><%= image_tag 'icons/cart.png' %> <a href="#">Your items: 0</a></p>
+			</div>
+		
+			<div id="logoSearchBar">
+				<div id="logo"><a href="#"><%= image_tag 'logo.jpg', :alt => 'Logotype' %></a></div>
+				<form id="search">
+					<input type="text" name="search" id="searchField" placeholder="Search..." />
+					<input type="submit" value="Search" id="submitBtn" />
+				</form>
+			</div>
+		</div><!-- end #header -->
+	
+	
+		<!--
+			Main navigation.
+			Sorting options.
+		-->
+		<div id="allNavigation">
+				<ul id="nav">
+					<li><a href="#">Featured products</a></li>
+					<li><a href="#">All products</a></li>
+					<li><a href="#">Games</a></li>
+					<li><a href="#">Software</a></li>
+				</ul>
+		</div><!-- end #allNavigation -->
+		
+		<!--
+			Container with all items.
+			Pagination.
+		-->
+		<div id="content">
+			<ul class="buyStages">
+				<li class="stageDone">
+					<div class="stageImg">1</div>
+					<div class="stageName itemsSelection">Items selection</div>
+				</li>
+				<li>
+					<div class="stageImg">2</div>
+					<div class="stageName deliveryType">Delivery type</div>
+				</li>
+				<li>
+					<div class="stageImg">3</div>
+					<div class="stageName">Payment</div>
+				</li>
+				<li>
+					<div class="stageImgCheckout">4</div>
+					<div class="stageName checkOutPos">Checkout</div>
+				</li>
+				<div class="clearall"></div>
+			</ul>
+			
+			<ul id="itemsTitleBar">
+				<li class="nameDesc">Name/Description</li>
+				<li class="provider shopProviderTitle">Wholesale Provider</li>
+				<li class="sortStock shopStockLevelTitle">Stock level</li>
+				<li class="shopPriceTitle">Price</li>
+				<li class="shopQuantityTitle">Quantity</li>
+				<li class="shopRemoveTitle">Remove</li>
+				<div class="clearall"></div>
+			</ul><!-- end #itemsTitleBar -->
+			
+			<div class="item">
+				<div class="nameDescImg">
+					<div class="imgDownlds">
+						<%= image_tag 'itemImages/fifa.png', :alt => 'FIFA' %>
+						<p class="downloadNum">13 994 downloads</p>
+					</div>
+					<div class="nameDescription">
+						<h3><a href="#">FIFA</a></h3>
+						<p>FIFA 11 (FIFA Soccer 11 in North America) is the 18th title in Electronic Arts' FIFA series of football video games. <a href="#">read more</a></p>
+					</div>					
+				</div>
+				<div class="providerInfo shopProviderInfo">
+					<h4>EA Games</h4>
+					<p>
+						Bellevue<br />
+						Washington<br />
+						U.S.<br />
+						<span>+44 07919580129</span><br />
+						<strong>Vladimir Shafikov</strong>
+					</p>
+				</div>
+				<div class="stockLevel shopStockLevel"><p class="inStock">in stock: 100</p></div><!-- class="outStock" -->
+				<div class="price shopPrice"><p>&pound;17.50</p></div>
+				<div class="shopQuantity"><form action="#"><input type="text" value="1" /></form></div>
+				<div class="shopRemove"><p><a href="#">remove</a></p></div>
+				<div class="clearall"></div>
+			</div><!-- end .item -->
+			
+			<div class="item">
+				<div class="nameDescImg">
+					<div class="imgDownlds">
+						<%= image_tag 'itemImages/halfLife.png', :alt => 'Half-Life' %>
+						<p class="downloadNum">25 774 downloads</p>
+					</div>
+					<div class="nameDescription">
+						<h3><a href="#">Half-Life 2</a></h3>
+						<p>Like its predecessor, Half-Life 2 was met with near-unanimous critical acclaim. It was praised for its advanced physics <a href="#">read more</a></p>
+					</div>					
+				</div>
+				<div class="providerInfo shopProviderInfo">
+					<h4>Valve Corporation</h4>
+					<p>
+						12 South St.<br />
+						Wolverhampton<br />
+						WV10 JH6<br />
+						<span>+44 07919580129</span><br />
+						<strong>Gabe Newell</strong>
+					</p>
+				</div>
+				<div class="stockLevel shopStockLevel"><p class="inStock">in stock: 350</p></div><!-- class="outStock" -->
+				<div class="price shopPrice"><p>&pound;17.50</p></div>
+				<div class="shopQuantity"><form action="#"><input type="text" value="1" /></form></div>
+				<div class="shopRemove"><p><a href="#">remove</a></p></div>
+				<div class="clearall"></div>
+			</div><!-- end .item -->
+			<div class="summary">
+				<p>Summary</p><div class="sumAmount">&pound;35.00</div>
+				<div class="clearall"></div>
+				
+				<a href="#" class="continue">Delivery type &#62;</a>
+				<div class="clearall"></div>
+			</div><!-- end .summary -->
+			
+		</div><!-- end #content -->
+		
+		<div id="footer">
+			<p class="year">2011 &ndash; 2012</p>
+			<p class="aboutUs"><a href="#">About us</a></p>
+		</div><!-- end #footer -->
+	</div><!-- end #container -->
