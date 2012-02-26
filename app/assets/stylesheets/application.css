@@ -219,12 +219,12 @@ body:before {
 			padding: 2px 0;
 		}
 		.provider {
-			width: 135px;
+			width: 130px;
 			border-right: 1px solid #ababab;
 			padding: 2px 5px;
 		}
 		.sortStock {
-			width: 147px;
+			width: 152px;
 			border-right: 1px solid #ababab;
 			padding: 0 5px;
 		}
@@ -291,7 +291,7 @@ body:before {
 				}
 
 		.providerInfo {
-			width: 135px;
+			width: 130px;
 			height: 130px;
 			float: left;
 			padding: 0 5px;
@@ -317,7 +317,7 @@ body:before {
 				}
 		
 		.stockLevel {
-			width: 147px;
+			width: 152px;
 			height: 130px;
 			float: left;
 			padding: 0 5px;
@@ -429,7 +429,7 @@ body:before {
 		}
 			.team li {
 				float: left;
-				margin: 0 2%;
+				margin: 0 3% 0 0;
 				text-align: center;
 			}
 		.writeUs {
