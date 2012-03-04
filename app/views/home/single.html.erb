@@ -1,40 +1,10 @@
 		<!--
-			Log in bar on the top. Basket if logged in.
-			Logo. Search.
-		-->
-		<div id="header">
-			<div id="accountBar">
-				<p class="welcomeMessage"><%= image_tag 'icons/user.png' %> Hello, Username (username@email.com). <a href="#">Log out</a></p>
-				<p class="basketInfo"><%= image_tag 'icons/cart.png' %> <a href="#">Your items: 0</a></p>
-			</div>
-		
-			<div id="logoSearchBar">
-				<div id="logo"><a href="#"><%= image_tag 'logo.jpg', :alt => 'Logotype' %></a></div>
-				<form id="search">
-					<input type="text" name="search" id="searchField" placeholder="Search..." />
-					<input type="submit" value="Search" id="submitBtn" />
-				</form>
-			</div>
-		</div><!-- end #header -->
-	
-	
-		<!--
 			Main navigation.
 			Sorting options.
 		-->
 		<div id="allNavigation">
-				<ul id="nav">
-					<li><a href="#">Featured products</a></li>
-					<li class="current"><a href="#">All products</a></li>
-					<li><a href="#">Games</a></li>
-					<li><a href="#">Software</a></li>
-				</ul>
-				<ul id="sortNav">
-					<li class="sortByTitle">Sort by:</li>
-					<li><a href="#" class="currentSort">Newest first</a></li>
-					<li><a href="#">Most downloadable</a></li>
-					<li><a href="#">A-Z</a></li>
-				</ul>
+            <%= render :partial => "shared/nav" %>
+            <%= render :partial => "shared/sortnav" %>
 		</div><!-- end #allNavigation -->
 		
 		<!--
