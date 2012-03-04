@@ -1,4 +1,8 @@
 CollaborativeDevelopmentWeb::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :web_administrators, ActiveAdmin::Devise.config
+
   root :to => 'home#index'
   
   # About

@@ -23,9 +23,9 @@ end
 gem 'jquery-rails'
 
 # Active Admin
-# gem 'activeadmin'
-# gem 'sass-rails'
-# gem "meta_search", '>= 1.1.0.pre'
+gem 'activeadmin'
+gem 'sass-rails'
+gem "meta_search", '>= 1.1.0.pre'
 
 group :test, :development do
   gem "capybara"

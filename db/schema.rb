@@ -11,14 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120226230031) do
+ActiveRecord::Schema.define(:version => 20120304141544) do
+
+  create_table "Community", :id => false, :force => true do |t|
+    t.string "display",              :limit => 10, :null => false
+    t.string "first_name",           :limit => 20, :null => false
+    t.string "last_name",            :limit => 20, :null => false
+    t.string "email",                :limit => 30, :null => false
+    t.string "confirm_email",        :limit => 30, :null => false
+    t.string "country",              :limit => 20, :null => false
+    t.string "house_name or number", :limit => 50, :null => false
+    t.string "postcode",             :limit => 10, :null => false
+  end
 
   create_table "accounts", :primary_key => "username", :force => true do |t|
     t.string "password", :limit => 20, :null => false
   end
 
-  create_table "addresses", :id => false, :force => true do |t|
+  create_table "addresses", :primary_key => "addressID", :force => true do |t|
     t.string  "address",       :limit => 30, :null => false
+    t.string  "city",          :limit => 40
     t.string  "postcode",      :limit => 9,  :null => false
     t.integer "mobile_number",               :null => false
     t.integer "phone_number",                :null => false
@@ -26,11 +38,9 @@ ActiveRecord::Schema.define(:version => 20120226230031) do
   end
 
   create_table "customers", :primary_key => "reference_number", :force => true do |t|
-    t.string  "first_name",    :limit => 30, :null => false
-    t.string  "last_name",     :limit => 30, :null => false
-    t.integer "mobile_number",               :null => false
-    t.integer "phone_number",                :null => false
-    t.string  "email",         :limit => 30, :null => false
+    t.string  "first_name", :limit => 30, :null => false
+    t.string  "last_name",  :limit => 30, :null => false
+    t.integer "address",                  :null => false
   end
 
   create_table "feedbacks", :force => true do |t|
@@ -71,14 +81,14 @@ ActiveRecord::Schema.define(:version => 20120226230031) do
   add_index "product_offers", ["prod_id", "offer_id"], :name => "prod_id"
 
   create_table "reviews", :id => false, :force => true do |t|
-    t.integer "prod_id",                    :null => false
-    t.string  "description", :limit => 300, :null => false
-    t.integer "rating",      :limit => 1,   :null => false
-    t.date    "date",                       :null => false
-    t.integer "user_id",                    :null => false
+    t.string  "product_name", :limit => 25,  :null => false
+    t.string  "description",  :limit => 300, :null => false
+    t.integer "rating",       :limit => 1,   :null => false
+    t.date    "date",                        :null => false
+    t.integer "user_id",                     :null => false
   end
 
-  add_index "reviews", ["prod_id", "user_id"], :name => "prod_id"
+  add_index "reviews", ["product_name", "user_id"], :name => "prod_id"
 
   create_table "staff", :force => true do |t|
     t.string  "first_name",   :limit => 30,  :null => false
@@ -98,18 +108,34 @@ ActiveRecord::Schema.define(:version => 20120226230031) do
     t.string  "platform",      :limit => 0,   :null => false
     t.integer "stockLevel"
     t.integer "reorderLevel"
-    t.string  "type",          :limit => 10
     t.integer "noOfDownloads"
     t.integer "total_sales",                  :null => false
-    t.integer "audit_sales",                  :null => false
     t.binary  "image"
     t.integer "quantity",                     :null => false
   end
 
+  create_table "web_administrators", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "web_administrators", ["email"], :name => "index_web_administrators_on_email", :unique => true
+  add_index "web_administrators", ["reset_password_token"], :name => "index_web_administrators_on_reset_password_token", :unique => true
+
   create_table "wholesalers", :id => false, :force => true do |t|
     t.integer "wholesalerID",                 :null => false
     t.string  "name",           :limit => 20, :null => false
-    t.string  "address",        :limit => 11, :null => false
+    t.integer "address",                      :null => false
     t.integer "contactNumber",                :null => false
     t.string  "email",          :limit => 30, :null => false
     t.string  "website",        :limit => 30
