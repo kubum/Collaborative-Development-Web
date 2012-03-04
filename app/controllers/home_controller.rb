@@ -7,14 +7,14 @@ class HomeController < ApplicationController
   	@feedback = Feedback.new  	
   end
 
-  def create_feedback
-    @feedback = Feedback.new(params[:feedback])
+  def feedback_send
+    @feedback = Feedback.new(params[:feedback].merge(:ip => request.remote_ip))
 
     respond_to do |format|
       if @feedback.save
-        format.html { redirect_to @feedback, notice: 'Feedback was successfully created.' }
+        format.html { redirect_to about_path, notice: 'Feedback was successfully created.' }
       else
-        format.html { render action: "new" }
+        format.html { render action: "about" }
       end
     end
   end
