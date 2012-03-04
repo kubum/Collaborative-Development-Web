@@ -10,7 +10,7 @@ class AboutController < ApplicationController
       if @feedback.save
         format.html { redirect_to about_path, notice: 'Feedback was successfully created.' }
       else
-        format.html { render action: "about" }
+        format.html { render action: "index" }
       end
     end
   end
