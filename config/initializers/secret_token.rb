@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-CollaborativeDevelopmentWeb::Application.config.secret_token = '8b78af6584e5f577e3d624d8046b9a21dcd426a8c9ca516e78766dd72eea782999bf15d7895042642e028514240af8e9ee2a2a8590ae7f24b913c94115949546'
+CollaborativeDevelopmentWeb::Application.config.secret_token = 'fhffhyy45y2nq2nnnq6nq6nsts2111n1n111v1v565n847n4n4564563bn3bn4576677665732n1n1m11mm7m2657645'
