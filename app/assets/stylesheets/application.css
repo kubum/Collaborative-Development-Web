@@ -226,15 +226,15 @@ body:before {
 		.sortStock {
 			width: 152px;
 			border-right: 1px solid #ababab;
-			padding: 0 5px;
+			padding: 2px 5px;
 		}
-			.sortStock p, .sortPrice p {
+			.sortPrice p {
 				padding: 2px 0;
 			}
-			.sortStock p, .sortStock form, .sortPrice p, .sortPrice form {
+			.sortPrice p, .sortPrice form {
 				float: left;
 			}
-			.sortStock form, .sortPrice form {
+			.sortPrice form {
 				margin: -3px 0 0 0;
 				padding: 0;
 			}

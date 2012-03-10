@@ -22,4 +22,15 @@ module ApplicationHelper
     
     content_tag("p", text, attributes)
   end
+  
+  def price_sort_select(params)
+    options = []
+    options << ["--", "asd", stocks_sort_path(:priceLevel => nil)]
+    options << ["Lowest first", stocks_sort_path(:priceLevel => :asc)]
+    options << ["Highest first", stocks_sort_path(:priceLevel => :desc)]
+    
+    selected = stocks_sort_path(:priceLevel => params[:priceLevel])
+    
+    select_tag "priceLevel", options_for_select(options, selected)
+  end
 end

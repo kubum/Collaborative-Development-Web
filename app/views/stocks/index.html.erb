@@ -15,20 +15,12 @@
 <div id="content">
 	<ul id="itemsTitleBar">
 		<li class="nameDesc">Name/Description</li>
-		<li class="sortStock"><p>Sort by: </p>
-		<form action="">
-			<select name="stockLevel">
-				<option value="mostStocked">Most stocked</option>
-				<option value="lessStocked">Less stocked</option>
-			</select>
-		</form></li>
+		<li class="sortStock">In stock</li>
 		<li class="sortPrice"><p>Sort by: </p>
-		<form action="">
-			<select name="priceLevel">
-				<option value="lowFirst">Lowest first</option>
-				<option value="highFirst">Highest first</option>
-			</select>
-		</form></li>
+		<%= form_tag(nil, :id => "priceLevel") do %>
+		    <%= price_sort_select(params) %>
+		<% end %>
+		</li>
 		<div class="clearall"></div>
 	</ul><!-- end #itemsTitleBar -->
 	
