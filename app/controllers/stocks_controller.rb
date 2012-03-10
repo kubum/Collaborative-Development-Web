@@ -1,4 +1,8 @@
 class StocksController < ApplicationController
+  def index
+    @products = Stock.all
+  end
+  
   def image
     product = Stock.find(params[:stock_id])
     image   = product.image

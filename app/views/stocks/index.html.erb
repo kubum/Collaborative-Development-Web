@@ -1,0 +1,65 @@
+<!--
+	Main navigation.
+	Sorting options.
+-->
+<div id="allNavigation">
+    <%= render :partial => "shared/nav" %>
+    <%= render :partial => "shared/sortnav" %>
+</div><!-- end #allNavigation -->
+
+
+<!--
+	Container with all items.
+	Pagination.
+-->
+<div id="content">
+	<ul id="itemsTitleBar">
+		<li class="nameDesc">Name/Description</li>
+		<li class="sortStock"><p>Sort by: </p>
+		<form action="">
+			<select name="stockLevel">
+				<option value="mostStocked">Most stocked</option>
+				<option value="lessStocked">Less stocked</option>
+			</select>
+		</form></li>
+		<li class="sortPrice"><p>Sort by: </p>
+		<form action="">
+			<select name="priceLevel">
+				<option value="lowFirst">Lowest first</option>
+				<option value="highFirst">Highest first</option>
+			</select>
+		</form></li>
+		<div class="clearall"></div>
+	</ul><!-- end #itemsTitleBar -->
+	
+	<% @products.each do |product| %>	
+	<div class="item">
+		<div class="nameDescImg">
+			<div class="imgDownlds">
+				<%= image_tag 'itemImages/fifa.png', :alt => 'Fifa' %>
+				<p class="downloadNum"><%= product.noOfDownloads %> downloads</p>
+			</div>
+			<div class="nameDescription">
+				<h3><%= link_to product.name, stock_path(product) %></h3>
+				<p>
+				    <%= show_description product.description %>
+				    <%= link_to "read more", stock_path(product) %>
+				</p>
+			</div>					
+		</div>
+		<div class="stockLevel">
+		    <%= in_stock(product.stockLevel) %>
+		</div>
+		<div class="price"><p>
+		    <a href="#" class="buyBtn">Buy <%= number_to_currency product.salesPrice %></a></p>
+		</div>
+		<div class="clearall"></div>
+	</div><!-- end .item -->
+	<% end %>
+	
+	<div id="paginator">
+		<a href="#" class="previous">&#60; Previous</a>
+		<a href="#" class="next">Next &#62;</a>
+		<div class="clearall"></div>
+	</div><!-- end #paginator -->
+</div><!-- end #content -->

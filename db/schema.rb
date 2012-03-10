@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304141544) do
+ActiveRecord::Schema.define(:version => 20120310114827) do
 
   create_table "Community", :id => false, :force => true do |t|
     t.string "display",              :limit => 10, :null => false
@@ -100,18 +100,25 @@ ActiveRecord::Schema.define(:version => 20120304141544) do
     t.string  "access_level", :limit => 0,   :null => false
   end
 
-  create_table "stock", :primary_key => "number", :force => true do |t|
-    t.string  "name",          :limit => 30,  :null => false
-    t.integer "salesPrice",                   :null => false
-    t.integer "unitPrice",                    :null => false
-    t.string  "description",   :limit => 100
-    t.string  "platform",      :limit => 0,   :null => false
+  create_table "stock", :force => true do |t|
+    t.string  "name",              :limit => 30,                             :null => false
+    t.float   "salesPrice",        :limit => 6,                              :null => false
+    t.float   "unitPrice",         :limit => 6,                              :null => false
+    t.string  "description",       :limit => 100
+    t.string  "delivery",          :limit => 0,          :default => "BOTH", :null => false
+    t.string  "platform",          :limit => 0,                              :null => false
     t.integer "stockLevel"
     t.integer "reorderLevel"
     t.integer "noOfDownloads"
-    t.integer "total_sales",                  :null => false
-    t.binary  "image"
-    t.integer "quantity",                     :null => false
+    t.integer "total_sales",                                                 :null => false
+    t.binary  "image",             :limit => 2147483647
+    t.integer "sales_since_audit",                                           :null => false
+    t.integer "stock_category_id",                                           :null => false
+    t.integer "featured",                                :default => 0,      :null => false
+  end
+
+  create_table "stock_categories", :force => true do |t|
+    t.string "title", :null => false
   end
 
   create_table "web_administrators", :force => true do |t|

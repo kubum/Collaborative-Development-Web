@@ -1,6 +1,6 @@
 ActiveAdmin.register Stock do
   index do
-    column :number
+    column :id
     column :name
     column :salesPrice do |product|  
       number_to_currency product.salesPrice
@@ -21,9 +21,9 @@ ActiveAdmin.register Stock do
   
   show do |product|
     attributes_table do
-      row :number
+      row :id
       row :image do
-        # image_tag(product.image)
+        image_tag(stock_image_path(product), :style => "width: 600px;")
       end
     end
   end

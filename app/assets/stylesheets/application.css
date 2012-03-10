@@ -214,7 +214,7 @@ body:before {
 			display: block;
 		}
 		.nameDesc {
-			width: 280px;
+			width: 410px;
 			border-right: 1px solid #ababab;
 			padding: 2px 0;
 		}
@@ -251,7 +251,7 @@ body:before {
 		padding: 0 0 5px 0;
 	}
 		.nameDescImg {
-			width: 280px;
+			width: 410px;
 			height: 130px;
 			float: left;
 			padding: 0 5px 0 0;

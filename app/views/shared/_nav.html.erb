@@ -1,6 +1,8 @@
 <ul id="nav">
 	<li><a href="#">Featured products</a></li>
 	<li><a href="#">All products</a></li>
-	<li><a href="#">Games</a></li>
-	<li><a href="#">Software</a></li>
+	
+	<% StockCategory.all.each do |category| %>
+	    <li><a href="#"><%= category.title %></a></li>
+	<% end %>
 </ul>
