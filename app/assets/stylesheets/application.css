@@ -187,7 +187,7 @@ body:before {
 				display: block;
 				padding: 2px 4px;
 			}
-			#sortNav li a:hover, #sortNav li a.currentSort {
+			#sortNav li a:hover, #sortNav li.currentSort a {
 				color: #fff;
 				background: #bbb;
 				border-radius: 3px;

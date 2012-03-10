@@ -1,6 +1,8 @@
 <ul id="sortNav">
 	<li class="sortByTitle">Sort by:</li>
-	<li><a href="#">Newest first</a></li>
-	<li><a href="#">Most downloadable</a></li>
-	<li><a href="#">A-Z</a></li>
+	
+	<%= li_left_sort "Newest first", stocks_path %>
+	<%= li_left_sort "Most downloadable", stocks_sort_downloads_path %>
+	<%= li_left_sort "A-Z", stocks_sort_alphabet_az_path %>
+	<%= li_left_sort "Z-A", stocks_sort_alphabet_za_path %>
 </ul>

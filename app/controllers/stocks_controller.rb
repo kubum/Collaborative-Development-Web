@@ -2,8 +2,15 @@ class StocksController < ApplicationController
   def index
     @products = Stock.scoped
     
-    @products = @products.ordered("salesPrice #{params[:priceLevel]}") if need_to_sort params[:priceLevel]
+    puts params.inspect
     
+    # Price sorting
+    @products = @products.ordered("salesPrice #{params[:priceLevel]}") if need_to_sort params[:priceLevel]
+    # Downloads sorting
+    @products = @products.ordered("noOfDownloads #{params[:noOfDownloads]}") if need_to_sort params[:noOfDownloads]    
+    # Alphabet
+    @products = @products.ordered("name #{params[:name]}") if need_to_sort params[:name]
+        
     @products = @products.page(params[:page]).per(5)
   end
   
