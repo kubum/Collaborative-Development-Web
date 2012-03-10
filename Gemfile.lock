@@ -53,6 +53,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.1)
       ffi (~> 1.0.6)
+    cocaine (0.2.1)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -101,6 +102,11 @@ GEM
     mysql2 (0.3.11)
     nokogiri (1.5.0)
     orm_adapter (0.0.6)
+    paperclip (2.7.0)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -182,6 +188,7 @@ DEPENDENCIES
   jquery-rails
   meta_search (>= 1.1.0.pre)
   mysql2
+  paperclip (~> 2.7)
   rails (= 3.2.1)
   rspec-rails (~> 2.6)
   sass-rails

@@ -12,4 +12,8 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   get 'home/single', :to => 'home#single'
   get 'home/shop', :to => 'home#shop'
   get 'home/products', :to => 'home#products'
+  
+  resources :stocks do
+    get :image
+  end
 end
