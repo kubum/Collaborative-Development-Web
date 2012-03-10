@@ -367,16 +367,25 @@ body:before {
 		border-top: 1px solid #ddd;
 		border-bottom: 1px solid #ddd;
 	}
-		#paginator a {
-			text-decoration: none;
+	    #paginator span {
+	        display: inline-block;
 			background: #3d87cd;
-			color: #fff;
-			padding: 5px 7px;
+			padding: 2px 7px;
 			border-radius: 5px;
 			border: 1px solid #51a2ef;
+			margin: 0 5px;
+			text-align: center;
+			color: #fff;
+	    }
+		#paginator a {
+	        text-decoration: none;
+			color: #fff;
+		}
+		#paginator .current {
+		    background: #4AA7FF;            
 		}
 		#paginator a:hover {
-			background: #2e679d;
+		    
 		}
 		#paginator .previous {
 			float: left;

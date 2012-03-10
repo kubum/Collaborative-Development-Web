@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
   def index
-    @products = Stock.all
+    @products = Stock.page(params[:page]).per(5)
   end
   
   def image

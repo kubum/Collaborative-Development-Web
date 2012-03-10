@@ -180,6 +180,7 @@ DEPENDENCIES
   capybara
   factory_girl_rails (= 1.4.0)
   jquery-rails
+  kaminari
   meta_search (>= 1.1.0.pre)
   mysql2
   rails (= 3.2.1)
