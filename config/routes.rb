@@ -13,13 +13,10 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   get 'home/products', :to => 'home#products'
   
   get 'stocks(/promotion/:featured)(/category/:category_id)(/sort/:sort)(/order/:order)', :to => "stocks#index", :as => :stocks_sort
-  
-  # 
-  # get 'stocks(/category/:category_id)(/priceLevel/:priceLevel)', :to => "stocks#index", :as => :stocks_sort_price
-  # get 'stocks(/category/:category_id)/downloads',   :to => "stocks#index", :as => :stocks_sort_downloads, :noOfDownloads => "desc"
-  # get 'stocks(/category/:category_id)/alphabet_az', :to => "stocks#index", :as => :stocks_sort_alphabet_az, :name => "asc"
-  # get 'stocks(/category/:category_id)/alphabet_za', :to => "stocks#index", :as => :stocks_sort_alphabet_za, :name => "desc"
-  # 
+
+  resources :promotions, :only => [:image] do
+    get :image
+  end
   
   resources :stocks do
     get :image

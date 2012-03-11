@@ -4,7 +4,6 @@
 	-->
 	<div id="allNavigation">
         <%= render :partial => "shared/nav" %>
-        <%= render :partial => "shared/sortnav" %>
 	</div><!-- end #allNavigation -->
 	
 	<!--
@@ -12,14 +11,17 @@
 		Pagination.
 	-->
 	<div id="content">
-		<div class="slider-wrapper theme-default">
-            <div class="ribbon"></div>
-            <div id="slider" class="nivoSlider">
-				<a href="#"><%= image_tag 'slider/halfLife.jpg', :title => "Half-Life 50% OFF of the price [promo 20/02/12 — 20/03/12]" %></a>
-                <a href="#"><%= image_tag 'slider/nfs.jpg', :title => 'Buy "Need for speed: The Run" get "Need for speed: Most wanted" for FREE!' %></a>
-            </div>
-        </div>			
-		<div class="clearall"></div>
+	    <% unless @promotions.empty? %>
+    		<div class="slider-wrapper theme-default">
+                <div class="ribbon"></div>
+                <div id="slider" class="nivoSlider">
+                    <% @promotions.each do |promotion| %>
+    				    <%= link_to image_tag(promotion_image_path(promotion), :title => promotion.title), promotion.url %>
+    				<% end %>
+                </div>
+            </div>			
+    		<div class="clearall"></div>
+		<% end %>
 		
 		<ul id="itemsTitleBar">
 			<li class="nameDesc">Name/Description</li>

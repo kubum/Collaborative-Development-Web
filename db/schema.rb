@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310114827) do
+ActiveRecord::Schema.define(:version => 20120311172553) do
 
   create_table "Community", :id => false, :force => true do |t|
     t.string "display",              :limit => 10, :null => false
@@ -80,6 +80,14 @@ ActiveRecord::Schema.define(:version => 20120310114827) do
 
   add_index "product_offers", ["prod_id", "offer_id"], :name => "prod_id"
 
+  create_table "promotions", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.binary   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reviews", :id => false, :force => true do |t|
     t.string  "product_name", :limit => 25,  :null => false
     t.string  "description",  :limit => 300, :null => false
@@ -104,12 +112,12 @@ ActiveRecord::Schema.define(:version => 20120310114827) do
     t.string  "name",              :limit => 30,                             :null => false
     t.float   "salesPrice",        :limit => 6,                              :null => false
     t.float   "unitPrice",         :limit => 6,                              :null => false
-    t.string  "description",       :limit => 100
+    t.text    "description",                                                 :null => false
     t.string  "delivery",          :limit => 0,          :default => "BOTH", :null => false
     t.string  "platform",          :limit => 0,                              :null => false
     t.integer "stockLevel"
     t.integer "reorderLevel"
-    t.integer "noOfDownloads"
+    t.integer "noOfDownloads",                           :default => 0,      :null => false
     t.integer "total_sales",                                                 :null => false
     t.binary  "image",             :limit => 2147483647
     t.integer "sales_since_audit",                                           :null => false
