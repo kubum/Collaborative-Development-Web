@@ -2,15 +2,19 @@ class StocksController < ApplicationController
   def index
     @products = Stock.scoped
     
-    puts params.inspect
+    # Category
+    @products = @products.where(:stock_category_id => params[:category_id]) unless params[:category_id].nil?
     
-    # Price sorting
-    @products = @products.ordered("salesPrice #{params[:priceLevel]}") if need_to_sort params[:priceLevel]
-    # Downloads sorting
-    @products = @products.ordered("noOfDownloads #{params[:noOfDownloads]}") if need_to_sort params[:noOfDownloads]    
-    # Alphabet
-    @products = @products.ordered("name #{params[:name]}") if need_to_sort params[:name]
+    # Featured
+    @products = @products.where(:featured => 1) unless params[:featured].nil?
         
+    # Price sorting
+    @products = @products.ordered("salesPrice #{params[:order]}") if need_to_sort :priceLevel, params
+    # Downloads sorting
+    @products = @products.ordered("noOfDownloads #{params[:order]}") if need_to_sort :noOfDownloads, params
+    # Alphabet
+    @products = @products.ordered("name #{params[:order]}") if need_to_sort :name, params
+
     @products = @products.page(params[:page]).per(5)
   end
   
@@ -24,7 +28,7 @@ class StocksController < ApplicationController
   end
   
   private 
-    def need_to_sort(param)
-      ["asc", "desc"].include? param
+    def need_to_sort(column, params)
+      ["asc", "desc"].include?(params[:order]) && params[:sort] == column.to_s
     end
 end

@@ -238,10 +238,15 @@ body:before {
 				margin: -3px 0 0 0;
 				padding: 0;
 			}
-		.sortPrice {
+		.sortPrice, .showPrice {
 			width: 145px;
+		}
+		.sortPrice {
 			padding: 0 5px;
 		}
+		.showPrice {
+			padding: 2px 5px;
+	    }
 		
 	.item {
 		clear: both;

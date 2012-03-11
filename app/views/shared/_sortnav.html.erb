@@ -1,8 +1,8 @@
 <ul id="sortNav">
 	<li class="sortByTitle">Sort by:</li>
 	
-	<%= li_left_sort "Newest first", stocks_path %>
-	<%= li_left_sort "Most downloadable", stocks_sort_downloads_path %>
-	<%= li_left_sort "A-Z", stocks_sort_alphabet_az_path %>
-	<%= li_left_sort "Z-A", stocks_sort_alphabet_za_path %>
+	<%= li_left_sort "Newest first", stocks_sort_path(:sort => "id", :order => "asc") %>
+	<%= li_left_sort "Most downloadable", stocks_sort_path(:sort => "noOfDownloads", :order => "desc") %>
+	<%= li_left_sort "A-Z", stocks_sort_path(:sort => "name", :order => "asc") %>
+	<%= li_left_sort "Z-A", stocks_sort_path(:sort => "name", :order => "desc") %>
 </ul>

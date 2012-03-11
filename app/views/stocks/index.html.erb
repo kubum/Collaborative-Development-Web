@@ -13,40 +13,46 @@
 	Pagination.
 -->
 <div id="content">
-	<ul id="itemsTitleBar">
-		<li class="nameDesc">Name/Description</li>
-		<li class="sortStock">In stock</li>
-		<li class="sortPrice"><p>Sort by: </p>
-		<%= form_tag(nil, :id => "priceLevel") do %>
-		    <%= price_sort_select(params) %>
-		<% end %>
-		</li>
-		<div class="clearall"></div>
-	</ul><!-- end #itemsTitleBar -->
+	<% if @products.empty? %>
+	    <div class="notice">
+	        No products
+	    </div>
+	<% else %>
+    	<ul id="itemsTitleBar">
+    		<li class="nameDesc">Name/Description</li>
+    		<li class="sortStock">In stock</li>
+    		<li class="sortPrice"><p>Sort by: </p>
+    		<%= form_tag(nil, :id => "priceLevel") do %>
+    		    <%= price_sort_select(params) %>
+    		<% end %>
+    		</li>
+    		<div class="clearall"></div>
+    	</ul><!-- end #itemsTitleBar -->
 	
-	<% @products.each do |product| %>	
-	<div class="item">
-		<div class="nameDescImg">
-			<div class="imgDownlds">
-				<%= image_tag 'itemImages/fifa.png', :alt => 'Fifa' %>
-				<p class="downloadNum"><%= product.noOfDownloads %> downloads</p>
-			</div>
-			<div class="nameDescription">
-				<h3><%= link_to product.name, stock_path(product) %></h3>
-				<p>
-				    <%= show_description product.description %>
-				    <%= link_to "read more", stock_path(product) %>
-				</p>
-			</div>					
-		</div>
-		<div class="stockLevel">
-		    <%= in_stock(product.stockLevel) %>
-		</div>
-		<div class="price"><p>
-		    <a href="#" class="buyBtn">Buy <%= number_to_currency product.salesPrice %></a></p>
-		</div>
-		<div class="clearall"></div>
-	</div><!-- end .item -->
+    	<% @products.each do |product| %>	
+    	<div class="item">
+    		<div class="nameDescImg">
+    			<div class="imgDownlds">
+    				<%= image_tag 'itemImages/fifa.png', :alt => 'Fifa' %>
+    				<p class="downloadNum"><%= product.noOfDownloads %> downloads</p>
+    			</div>
+    			<div class="nameDescription">
+    				<h3><%= link_to product.name, stock_path(product) %></h3>
+    				<p>
+    				    <%= show_description product.description %>
+    				    <%= link_to "read more", stock_path(product) %>
+    				</p>
+    			</div>					
+    		</div>
+    		<div class="stockLevel">
+    		    <%= in_stock(product.stockLevel) %>
+    		</div>
+    		<div class="price"><p>
+    		    <a href="#" class="buyBtn">Buy <%= number_to_currency product.salesPrice %></a></p>
+    		</div>
+    		<div class="clearall"></div>
+    	</div><!-- end .item -->
+    	<% end %>
 	<% end %>
 	
 	<%= paginate @products %>

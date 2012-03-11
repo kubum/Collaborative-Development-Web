@@ -25,11 +25,11 @@ module ApplicationHelper
   
   def price_sort_select(params)
     options = []
-    options << ["--", "asd", stocks_sort_price_path(:priceLevel => nil)]
-    options << ["Lowest first", stocks_sort_price_path(:priceLevel => :asc)]
-    options << ["Highest first", stocks_sort_price_path(:priceLevel => :desc)]
+    options << ["--", "asd", stocks_sort_path]
+    options << ["Lowest first", stocks_sort_path(:sort => "priceLevel", :order => "asc")]
+    options << ["Highest first", stocks_sort_path(:sort => "priceLevel", :order => "desc")]
     
-    selected = stocks_sort_price_path(:priceLevel => params[:priceLevel])
+    selected = stocks_sort_path(:sort => params[:sort], :order => params[:order])
     
     select_tag "priceLevel", options_for_select(options, selected)
   end
@@ -37,6 +37,27 @@ module ApplicationHelper
   def li_left_sort(title, route)
     attributes = {  }
     attributes[:class] = "currentSort" if current_page?(route)
+    content_tag("li", link_to(title, route), attributes)
+  end
+  
+  def li_left_category(title, route, params)
+    attributes = {  }
+    attributes[:class] = "current" if !params[:category_id].nil? && params[:category_id].to_i == route[:category_id]
+    content_tag("li", link_to(title, stocks_sort_path(route)), attributes)
+  end
+  
+  def li_all_products(title, route, params)
+    puts params.inspect
+    attributes = {  }
+    attributes[:class] = "current" if params[:controller] == "stocks" && params[:action] == "index" && params[:category_id].nil? && params[:featured].nil?
+    
+    content_tag("li", link_to(title, route), attributes)
+  end
+  
+  def li_featured(title, route, params)
+    attributes = {  }
+    attributes[:class] = "current" if params[:controller] == "stocks" && params[:action] == "index" && params[:category_id].nil? && !params[:featured].nil?
+    
     content_tag("li", link_to(title, route), attributes)
   end
 end

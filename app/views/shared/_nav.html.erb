@@ -1,8 +1,8 @@
 <ul id="nav">
-	<li><a href="#">Featured products</a></li>
-	<li><a href="#">All products</a></li>
+	<%= li_featured "Featured products", stocks_sort_path(:featured => :featured), params %>
+	<%= li_all_products "All products",  stocks_sort_path, params %>
 	
 	<% StockCategory.all.each do |category| %>
-	    <li><a href="#"><%= category.title %></a></li>
+	    <%= li_left_category category.title, { :category_id => category.id }, params %>
 	<% end %>
 </ul>
