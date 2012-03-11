@@ -23,6 +23,7 @@
     		<div class="clearall"></div>
 		<% end %>
 		
+		<% unless @featured.empty? %>
 		<ul id="itemsTitleBar">
 			<li class="nameDesc">Name/Description</li>
             <li class="sortStock">In stock</li>
@@ -30,51 +31,8 @@
 			<div class="clearall"></div>
 		</ul><!-- end #itemsTitleBar -->
 		
-		<div class="item">
-			<div class="nameDescImg">
-				<div class="imgDownlds">
-				    <%= image_tag 'itemImages/fifa.png', :alt => 'item1' %>
-					<p class="downloadNum">13 994 downloads</p>
-				</div>
-				<div class="nameDescription">
-					<h3><a href="#">FIFA</a></h3>
-					<p>FIFA 11 (FIFA Soccer 11 in North America) is the 18th title in Electronic Arts' FIFA series of football video games. <a href="#">read more</a></p>
-				</div>					
-			</div>
-			<div class="stockLevel"><p class="inStock">in stock: 100</p></div><!-- class="outStock" -->
-			<div class="price"><p><a href="#" class="buyBtn">Buy &pound;17.50</a></p></div>
-			<div class="clearall"></div>
-		</div><!-- end .item -->
-		
-		<div class="item">
-			<div class="nameDescImg">
-				<div class="imgDownlds">
-				    <%= image_tag 'itemImages/halfLife.png', :alt => 'item1' %>
-					<p class="downloadNum">25 012 downloads</p>
-				</div>
-				<div class="nameDescription">
-					<h3><a href="#">Half-Life 2</a></h3>
-					<p>Like its predecessor, Half-Life 2 was met with near-unanimous critical acclaim. It was praised for its advanced physics <a href="#">read more</a></p>
-				</div>					
-			</div>
-			<div class="stockLevel"><p class="inStock">in stock: 350</p></div><!-- class="outStock" -->
-			<div class="price"><p><a href="#" class="buyBtn">Buy &pound;17.50</a></p></div>
-			<div class="clearall"></div>
-		</div><!-- end .item -->
-		
-		<div class="item">
-			<div class="nameDescImg">
-				<div class="imgDownlds">
-				    <%= image_tag 'itemImages/macOffice.png', :alt => 'item1' %>
-					<p class="downloadNum">17 400 downloads</p>
-				</div>
-				<div class="nameDescription">
-					<h3><a href="#">Office:mac</a></h3>
-					<p>Microsoft Office for Mac 2011 is the most recent version of the Microsoft Office productivity suite for Mac OS X. <a href="#">read more</a></p>
-				</div>					
-			</div>
-			<div class="stockLevel"><p class="inStock">in stock: 540</p></div><!-- class="outStock" -->
-			<div class="price"><p><a href="#" class="buyBtn">Buy &pound;39.00</a></p></div>
-			<div class="clearall"></div>
-		</div><!-- end .item -->
+        	<% @featured.each do |product| %>	
+                <%= render :partial => "stocks/product", :locals => { :product => product } %>
+        	<% end %>
+		<% end %>
 	</div><!-- end #content -->

@@ -5,6 +5,8 @@ class Promotion < ActiveRecord::Base
   attr_accessor :image_type
   
   def image=(input_data)
+    return if input_data.nil? 
+    
     self.image_type = input_data.content_type.chomp
     
     write_attribute(:image, input_data.read)

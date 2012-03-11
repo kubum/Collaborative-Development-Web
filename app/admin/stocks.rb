@@ -41,8 +41,10 @@ ActiveAdmin.register Stock do
       f.input :reorderLevel
       f.input :noOfDownloads
       f.input :total_sales
-      f.input :image,:as => :file
+      f.input :image, :as => :file
       f.input :sales_since_audit
+      f.input :stock_category_id, :as => :select, :collection => StockCategory.all, :include_blank => false
+      f.input :featured, :as => :boolean
     end
     f.buttons
   end
