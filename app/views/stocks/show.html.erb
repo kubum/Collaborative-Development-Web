@@ -11,7 +11,7 @@
 	<div class="singleItem">
 		<h1><%= @product.name %></h1>
 		<div class="singleImgDownlds">
-			<%= image_tag 'itemImages/fifa.png', :alt => 'Fifa' %>
+			<%= product_image @product %>
 			<p class="downloadNum"><%= @product.noOfDownloads %> downloads</p>
 		</div>
 		<div class="singleStockLevel"><%= in_stock(@product.stockLevel) %></div>

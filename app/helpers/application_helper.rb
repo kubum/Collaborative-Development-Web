@@ -60,4 +60,12 @@ module ApplicationHelper
     
     content_tag("li", link_to(title, route), attributes)
   end
+  
+  def product_image(product)
+    unless product.image.nil?
+      image_tag(stock_image_path(product), :alt => product.name, :style => "width: 130px;")
+    else
+      image_tag('no_thumbnail.png', :alt => product.name, :style => "width: 130px;")
+    end
+  end
 end
