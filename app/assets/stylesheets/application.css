@@ -648,7 +648,7 @@ body:before {
 				}
 		.singleNameDescription {
 			float: left;
-			width: 600px;
+			width: 705px;
 			padding-bottom: 5px;
 			margin: 5px 0 10px 5px;
 			border-bottom: 1px solid #aaa;
@@ -664,42 +664,34 @@ body:before {
 				font-size: 0.9em;
 				line-height: 1.4em;
 			}
-		.singleProviderInfo {
-			float: left;
-			margin: 0;
-			height: 130px;
-			font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
-			color: #555;
-			padding: 0 15px;
-			border-right: 1px solid #bababa;
-		}
-			.singleProviderInfo h4 {
-				font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
-				margin: 5px 0 8px 0;
-			}
-			.singleProviderInfo p {
-				font-family: "Arial Narrow", Arial, Helvetica, Sans-serif;
-				font-size: 1em;
-				line-height: 1.2em;
-				color: #686868;
-				font-size: 0.9em;
-			}
-				.singleProviderInfo p span {
-					text-decoration: underline;
-					color: #333;
-				}
-				.singleProviderInfo p strong {
-					font-weight: bold;
-				}
-		.singleStockLevel {
+		.singleDelivery {
 			height: 130px;
 			float: left;
 			padding: 0 10px;
 			border-right: 1px solid #ababab;
 		}
+    		.singleDelivery p {
+    			padding-top: 60px;
+    		}
+		.singlePlatform {
+		    height: 130px;
+			float: left;
+			padding: 0 10px;
+			border-right: 1px solid #ababab;
+			text-align: center;
+		}
+    		.singlePlatform p {
+    			padding-top: 60px;
+    		}
+		.singleStockLevel {
+			height: 130px;
+			float: left;
+			padding: 0 10px;
+			border-right: 1px solid #ababab;
+			text-align: center;
+		}
 			.singleStockLevel p {
-				text-align: center;
-				margin-top: 57%;
+    			padding-top: 60px;
 			}
 			.singleStockLevel .inStock {
 				color: #00b211;

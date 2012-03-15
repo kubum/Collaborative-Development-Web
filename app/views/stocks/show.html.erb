@@ -1,0 +1,29 @@
+<!--
+	Main navigation.
+	Sorting options.
+-->
+<div id="allNavigation">
+    <%= render :partial => "shared/nav" %>
+    <%= render :partial => "shared/sortnav" %>
+</div><!-- end #allNavigation -->
+
+<div id="content">	
+	<div class="singleItem">
+		<h1><%= @product.name %></h1>
+		<div class="singleImgDownlds">
+			<%= image_tag 'itemImages/fifa.png', :alt => 'Fifa' %>
+			<p class="downloadNum"><%= @product.noOfDownloads %> downloads</p>
+		</div>
+		<div class="singleStockLevel"><%= in_stock(@product.stockLevel) %></div>
+		<div class="singleDelivery"><p>Delivery: <%= @product.delivery.capitalize %></p></div>
+		<div class="singlePlatform"><p>Platform: <%= @product.platform %></p></div>
+		<div class="singleNameDescription">
+			<h3>Description</h3>
+			<p><%= @product.description %></p>
+		</div>
+		<div class="clearall"></div>
+		<div class="singlePrice"><a href="#" class="buyBtn">Buy <%= number_to_currency @product.salesPrice %></a></div>
+		<div class="clearall"></div>
+	</div><!-- end .singleItem -->
+	
+</div><!-- end #content -->

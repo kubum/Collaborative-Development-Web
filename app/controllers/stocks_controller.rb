@@ -27,6 +27,10 @@ class StocksController < ApplicationController
                      :disposition => 'inline'
   end
   
+  def show
+    @product = Stock.find(params[:id])
+  end
+  
   private 
     def need_to_sort(column, params)
       ["asc", "desc"].include?(params[:order]) && params[:sort] == column.to_s
