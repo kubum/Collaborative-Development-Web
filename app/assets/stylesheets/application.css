@@ -139,6 +139,13 @@ body:before {
 		background: url("searchBtnSprite.jpg") 0 -62px;
 	}
 	
+	.searching_for {
+	    padding: 5px 10px;
+	    margin: 5px 0px 15px 0px;
+	    background: #E4E4E4;
+	    border: 1px solid #737373;
+	}
+	
 #allNavigation {
 	width: 140px;
 	float: left;

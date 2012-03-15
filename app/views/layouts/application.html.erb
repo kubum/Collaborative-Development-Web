@@ -22,10 +22,10 @@
 
         		<div id="logoSearchBar">
         			<div id="logo"><%= link_to (image_tag 'logo.jpg', :alt => "Logotype"), root_path %></div>
-        			<form id="search">
-        				<input type="text" name="search" id="searchField" placeholder="Search..." />
-        				<input type="submit" value="Search" id="submitBtn" />
-        			</form>
+        			<%= form_tag(stocks_search_path, :id => "search", :method => :get) do %>
+        			    <%= text_field_tag :search, params[:search] || nil, :id => "searchField", :placeholder => "Search..." %>
+        			    <%= submit_tag "Search", :id => "submitBtn" %>
+        			<% end %>
         		</div>
         	</div><!-- end #header -->
         	

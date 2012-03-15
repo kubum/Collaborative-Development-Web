@@ -18,7 +18,8 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
     get :image
   end
   
-  resources :stocks do
+  get 'stocks/search', :to => 'stocks#search'
+  resources :stocks, :only => [:index, :show] do
     get :image
   end
 end

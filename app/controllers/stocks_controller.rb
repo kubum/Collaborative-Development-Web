@@ -31,6 +31,10 @@ class StocksController < ApplicationController
     @product = Stock.find(params[:id])
   end
   
+  def search
+    @products = Stock.where("name LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%").page(params[:page]).per(5)
+  end
+  
   private 
     def need_to_sort(column, params)
       ["asc", "desc"].include?(params[:order]) && params[:sort] == column.to_s

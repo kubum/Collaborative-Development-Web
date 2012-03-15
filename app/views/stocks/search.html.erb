@@ -1,0 +1,37 @@
+<!--
+	Main navigation.
+	Sorting options.
+-->
+<div id="allNavigation">
+    <%= render :partial => "shared/nav" %>
+</div><!-- end #allNavigation -->
+
+
+<!--
+	Container with all items.
+	Pagination.
+-->
+<div id="content">
+	<% if @products.empty? %>
+	    <div class="notice">
+	        No products found
+	    </div>
+	<% else %>
+	    <div class="searching_for">
+	        Found products: <%= @products.count %>
+	    </div>
+	    
+    	<ul id="itemsTitleBar">
+    		<li class="nameDesc">Name/Description</li>
+    		<li class="sortStock">In stock</li>
+    		<li class="showPrice">Stock price</li>
+    		<div class="clearall"></div>
+    	</ul><!-- end #itemsTitleBar -->
+	
+    	<% @products.each do |product| %>	
+            <%= render :partial => "product", :locals => { :product => product } %>
+    	<% end %>
+	<% end %>
+	
+	<%= paginate @products %>
+</div><!-- end #content -->
