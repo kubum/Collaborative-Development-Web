@@ -11,6 +11,7 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   get 'home/single', :to => 'home#single'
   get 'home/shop', :to => 'home#shop'
   get 'home/products', :to => 'home#products'
+  get 'home/registration', :to => 'home#registration'
   
   get 'stocks(/promotion/:featured)(/category/:category_id)(/sort/:sort)(/order/:order)', :to => "stocks#index", :as => :stocks_sort
 

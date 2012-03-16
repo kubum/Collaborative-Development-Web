@@ -1,0 +1,14 @@
+#regFields {
+	margin: 0 auto;
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size: 1.2em;
+	padding: 0 20%;
+}
+	#regFields input {
+		width: 350px;
+		margin: 5px 0px;
+		padding: 5px;
+		border-radius: 4px;
+		border: 1px solid #A8B0A1;
+		box-shadow: 0px 0px 1px #A8B0A1;
+	}

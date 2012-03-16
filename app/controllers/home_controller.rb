@@ -15,4 +15,8 @@ class HomeController < ApplicationController
   def products
 
   end
+
+  def registration
+
+  end
 end
