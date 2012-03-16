@@ -26,7 +26,9 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'sass-rails'
 gem "meta_search", '>= 1.1.0.pre'
+
 gem 'kaminari'
+gem 'devise'
 
 group :test, :development do
   gem "capybara"

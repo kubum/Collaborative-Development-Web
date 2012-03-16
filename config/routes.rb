@@ -1,4 +1,6 @@
 CollaborativeDevelopmentWeb::Application.routes.draw do
+  devise_for :customers, :controllers => { :sessions => "sessions" }
+
   ActiveAdmin.routes(self)
 
   devise_for :web_administrators, ActiveAdmin::Devise.config

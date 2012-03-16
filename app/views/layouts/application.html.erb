@@ -16,7 +16,20 @@
         	-->
         	<div id="header">
         		<div id="accountBar">
-        			<p class="welcomeMessage"><%= image_tag 'icons/user.png' %> Hello, Username (username@email.com). <a href="#">Log out</a></p>
+        			<p class="welcomeMessage">
+        			    <%= image_tag 'icons/user.png' %> 
+                		<% if customer_signed_in? %>
+                		    Hello, 
+                		        <%= current_customer.first_name %> 
+                		        <%= current_customer.last_name %> 
+                		        (<%= current_customer.email %>).                 		    
+                		    <%= button_to "Edit account", edit_customer_registration_path, :form_class => "sign_form", :method => :get %>	    
+                		    <%= button_to "Log out", destroy_customer_session_path, :form_class => "sign_form", :method => :delete %>		     
+        			    <% else %>
+        			        <%= button_to "Sign in", new_customer_session_path, :form_class => "sign_form", :method => :get %>
+        			    <% end %>
+        			</p>
+        			
         			<p class="basketInfo"><%= image_tag 'icons/cart.png' %> <a href="#">Your items: 0</a></p>
         		</div>
 
@@ -29,6 +42,13 @@
         		</div>
         	</div><!-- end #header -->
         	
+        	<% unless notice.blank? %>
+        	    <p class="notice"><%= notice %></p>
+        	<% end %>
+        	<% unless alert.blank? %>
+        	    <p class="alert"><%= alert %></p>
+        	<% end %>
+            
             <%= yield %>
             
         	<div id="footer">

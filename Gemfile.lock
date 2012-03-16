@@ -178,6 +178,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   capybara
+  devise
   factory_girl_rails (= 1.4.0)
   jquery-rails
   kaminari

@@ -95,6 +95,15 @@ body:before {
 	p.basketInfo {
 		float: right;
 	}
+	
+	form.sign_form {
+	    float: left;
+	    margin-left: 5px;
+	    
+	}	
+	    form.sign_form button {
+        /* ADD STYLE */
+        }
 
 #logoSearchBar {
 	background: url("logoSearchBar_background.png") no-repeat;
