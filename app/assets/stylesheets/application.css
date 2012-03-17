@@ -798,6 +798,9 @@ body:before {
 	float: left;
 	background: url("create_new_acc.png") no-repeat;
 }
+	#regFields div.label, #regFields div.label div, #regFields div.inputfield, #regFields div.inputfield div {
+		margin: 0;
+	}
 	#regFields div {
 		margin: 10px 0;
 		width: 265px;
@@ -891,6 +894,9 @@ body:before {
 	float: left;
 	margin-bottom: 30px;
 }
+	#getPasswordReset div.label, #getPasswordReset div.label div, #getPasswordReset div.inputfield, #getPasswordReset div.inputfield div {
+		margin: 0;
+	}
 	#getPasswordReset div {
 		margin: 10px 0;
 		width: 265px;
