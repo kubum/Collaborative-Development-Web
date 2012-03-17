@@ -800,6 +800,7 @@ body:before {
 }
 	#regFields div {
 		margin: 10px 0;
+		width: 265px;
 	}
 	#regFields #submit_sign_up input, #signInFields #submit_sign_up input, #getPasswordReset #submit_sign_up input {
 		font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
@@ -869,7 +870,7 @@ body:before {
 	#signInFields input#customer_remember_me {
 		width: auto;
 	}
-	#signInFields #extra_links, #getPasswordReset #extra_links {
+	#signInFields #extra_links, #getPasswordReset #extra_links, #changePass #extra_links {
 		margin-top: 40px;
 		text-align: center;
 		font-size: 1.1em;
@@ -882,14 +883,24 @@ body:before {
 /*** Restore password section ***/
 #getPasswordReset {
 	background: url("restorePass.png") no-repeat;
-	height: 290px;
 	margin-left: 34%;
 	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
 	color: #555;
 	font-size: 0.9em;
 	padding: 10% 2% 0 2%;
 	float: left;
+	margin-bottom: 30px;
 }
+	#getPasswordReset div {
+		margin: 10px 0;
+		width: 265px;
+	}
+		#getPasswordReset div h2 {
+			color: #ff5c5c;
+		}
+		#getPasswordReset div ul {
+			color: #ff5c5c;
+		}
 	#getPasswordReset #submit_sign_up input {
 		background: url("restore_pass_btn.png") no-repeat;
 		width: 260px;
@@ -905,5 +916,130 @@ body:before {
 
 /*** END restore password section ***/
 
+.signInOrLogOut_btn input, .editAcc_btn input {
+	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+	font-size: 0.8em;
+	color: #fff;
+	width: 55px;
+	height: 21px;
+	background: url(header_login_btn.png) no-repeat;
+	border: none;
+	margin-left: 0;
+	text-align: center;
+}
+.signInOrLogOut_btn input:hover {
+	background: url(header_login_btn.png) 0 -24px;
+}
+.signInOrLogOut_btn input:active {
+	padding-bottom: 1px;
+	background: url(header_login_btn.png) 0 21px;
+}
+
+.editAcc_btn input {
+	background: url(header_edit_btn.png) no-repeat;
+	width: 83px;
+}
+.editAcc_btn input:hover {
+	background: url(header_edit_btn.png) 0 -24px;
+}
+.editAcc_btn input:active {
+	padding-bottom: 1px;
+	background: url(header_edit_btn.png) 0 21px;
+}
 
 
+/*** Edit account page ***/
+#edit_account {
+	padding: 0 10px;
+	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+	color: #555;
+	font-size: 0.9em;
+	float: left;
+	margin-bottom: 40px;
+}
+	#edit_account h3 {
+		font-size: 1.2em;
+		border-bottom: 1px solid #bbb;
+		margin-bottom: 10px;
+	}
+	#edit_account div {
+		margin: 15px 0;
+	}
+	#edit_account input {
+		width: 300px;
+		margin: 2px 0px;
+		padding: 5px;
+		border-radius: 4px;
+		border: 1px solid #A8B0A1;
+		box-shadow: 0px 0px 1px #A8B0A1;
+	}
+	#edit_account #update_btn input {
+		font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+		font-size: 1em;
+		color: #fff;
+		width: 104px;
+		height: 36px;
+		background: url(sign_up_btn.png) no-repeat;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+	}
+		#edit_account #update_btn input:hover {
+			background: url(sign_up_btn.png) 0 -38px;
+		}
+		#edit_account #update_btn input:active {
+			padding-bottom: 1px;
+			background: url(sign_up_btn.png) 0 38px;
+		}
+/*** END Edit account page ***/
+
+
+
+/*** Change password ***/
+#changePass {
+	background: url("changePass.png") no-repeat;
+	margin-left: 34%;
+	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+	color: #555;
+	font-size: 0.9em;
+	padding: 10% 2% 0 2%;
+	float: left;
+	margin-bottom: 30px;
+}
+	#changePass div {
+		margin: 10px 0;
+		width: 265px;
+	}
+		#changePass div h2 {
+			color: #ff5c5c;
+		}
+		#changePass div ul {
+			color: #ff5c5c;
+		}
+	#changePass input {
+		width: 250px;
+		margin: 2px 0px;
+		padding: 5px;
+		border-radius: 4px;
+		border: 1px solid #A8B0A1;
+		box-shadow: 0px 0px 1px #A8B0A1;
+	}
+	#changePass #submit_sign_up input {
+		font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+		font-size: 1em;
+		color: #fff;
+		width: 159px;
+		height: 36px;
+		background: url(change_pass_btn.png) no-repeat;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+	}
+		#changePass #submit_sign_up input:hover {
+			background: url(change_pass_btn.png) 0 -38px;
+		}
+		#changePass #submit_sign_up input:active {
+			padding-bottom: 1px;
+			background: url(change_pass_btn.png) 0 38px;
+		}
+/*** END Change password ***/
