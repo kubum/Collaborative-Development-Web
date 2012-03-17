@@ -19,4 +19,8 @@ class HomeController < ApplicationController
   def registration
 
   end
+
+  def delivery_type
+
+  end
 end

@@ -639,6 +639,28 @@ body:before {
 				color: #777;
 				text-shadow: 1px 1px 1px #333;
 			}
+
+			.delivery_type {
+				padding: 0 10px;
+			}
+				.delivery_type ul li {
+					margin: 5px;
+					padding: 10px;
+					border-bottom: 1px solid #fff;
+				}
+				.delivery_type h1 {
+					font-family: Georgia, Arial, Helvetica, Sans-serif;
+					font-size: 1.2em;
+					color: #777;
+					border: none;
+					margin-top: 50px;
+					text-shadow: 1px 1px 1px #fff;
+				}
+				.delivery_type label {
+					font-family: "Lucida Sans Unicode", "Lucida Grande", Helvetica, Sans-serif;
+					font-size: 0.9em;
+					color: #444;
+				}
 	/*** END shop page ***/
 	
 	
