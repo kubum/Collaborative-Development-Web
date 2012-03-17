@@ -1,0 +1,5 @@
+$("#top_cart").show('slow');
+$("#top_cart").html("<%=j render 'carts/top' %>")
+$("#top_cart").animate({opacity: 0.3}, 300).animate({opacity: 1}, 300);
+
+$.jGrowl("Item successfully added to your cart", { position: "bottom-right" });

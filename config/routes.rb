@@ -25,4 +25,6 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   resources :stocks, :only => [:index, :show] do
     get :image
   end
+  
+  resources :cart_products, :only => [:create]
 end
