@@ -801,7 +801,7 @@ body:before {
 	#regFields div {
 		margin: 10px 0;
 	}
-	#regFields #submit_sign_up input, #signInFields #submit_sign_up input {
+	#regFields #submit_sign_up input, #signInFields #submit_sign_up input, #getPasswordReset #submit_sign_up input {
 		font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
 		font-size: 1em;
 		color: #fff;
@@ -813,10 +813,10 @@ body:before {
 		box-shadow: none;
 		margin-left: 30%;
 	}
-		#regFields #submit_sign_up input:hover, #signInFields #submit_sign_up input:hover {
+		#regFields #submit_sign_up input:hover, #signInFields #submit_sign_up input:hover, #getPasswordReset #submit_sign_up input:hover {
 			background: url(sign_up_btn.png) 0 -38px;
 		}
-		#regFields #submit_sign_up input:active, #signInFields #submit_sign_up input:active {
+		#regFields #submit_sign_up input:active, #signInFields #submit_sign_up input:active, #getPasswordReset #submit_sign_up input:active {
 			padding-bottom: 1px;
 			background: url(sign_up_btn.png) 0 38px;
 		}
@@ -855,10 +855,10 @@ body:before {
 	padding: 10% 2% 0 2%;
 	float: left;
 }
-	#signInFields div {
+	#signInFields div, #getPasswordReset div {
 		margin:10px 0;
 	}
-	#signInFields input {
+	#signInFields input, #getPasswordReset input {
 		width: 250px;
 		margin: 2px 0px;
 		padding: 5px;
@@ -869,10 +869,41 @@ body:before {
 	#signInFields input#customer_remember_me {
 		width: auto;
 	}
-	#signInFields #extra_links {
+	#signInFields #extra_links, #getPasswordReset #extra_links {
 		margin-top: 40px;
 		text-align: center;
 		font-size: 1.1em;
 		line-height: 1.2em;
 	}
 /*** END Sign in section ***/
+
+
+
+/*** Restore password section ***/
+#getPasswordReset {
+	background: url("restorePass.png") no-repeat;
+	height: 290px;
+	margin-left: 34%;
+	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+	color: #555;
+	font-size: 0.9em;
+	padding: 10% 2% 0 2%;
+	float: left;
+}
+	#getPasswordReset #submit_sign_up input {
+		background: url("restore_pass_btn.png") no-repeat;
+		width: 260px;
+		margin-left: 1%;
+	}
+	#getPasswordReset #submit_sign_up input:hover {
+		background: url("restore_pass_btn.png") 0 -38px;
+	}
+	#getPasswordReset #submit_sign_up input:active {
+		padding-bottom: 1px;
+		background: url("restore_pass_btn.png") 0 38px;
+	}
+
+/*** END restore password section ***/
+
+
+
