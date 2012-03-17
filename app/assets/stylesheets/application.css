@@ -799,7 +799,7 @@ body:before {
 	#regFields div {
 		margin: 10px 0;
 	}
-	#regFields #submit_sign_up input {
+	#regFields #submit_sign_up input, #signInFields #submit_sign_up input {
 		font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
 		font-size: 1em;
 		color: #fff;
@@ -809,12 +809,12 @@ body:before {
 		border: none;
 		border-radius: 0;
 		box-shadow: none;
-		margin-left: 28%;
+		margin-left: 30%;
 	}
-		#regFields #submit_sign_up input:hover {
+		#regFields #submit_sign_up input:hover, #signInFields #submit_sign_up input:hover {
 			background: url(sign_up_btn.png) 0 -38px;
 		}
-		#regFields #submit_sign_up input:active {
+		#regFields #submit_sign_up input:active, #signInFields #submit_sign_up input:active {
 			padding-bottom: 1px;
 			background: url(sign_up_btn.png) 0 38px;
 		}
@@ -839,4 +839,38 @@ body:before {
 	height: 201px;
 	background: url("use_existing_acc.png") no-repeat;
 }
-/*** End registration section ***/
+/*** END registration section ***/
+
+
+/*** Sign in section ***/
+#signInFields {
+	background: url("signIn_account.png") no-repeat;
+	height: 350px;
+	margin-left: 34%;
+	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+	color: #555;
+	font-size: 0.9em;
+	padding: 10% 2% 0 2%;
+	float: left;
+}
+	#signInFields div {
+		margin:10px 0;
+	}
+	#signInFields input {
+		width: 250px;
+		margin: 2px 0px;
+		padding: 5px;
+		border-radius: 4px;
+		border: 1px solid #A8B0A1;
+		box-shadow: 0px 0px 1px #A8B0A1;
+	}
+	#signInFields input#customer_remember_me {
+		width: auto;
+	}
+	#signInFields #extra_links {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 1.1em;
+		line-height: 1.2em;
+	}
+/*** END Sign in section ***/

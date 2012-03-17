@@ -1,7 +1,6 @@
 <h2>Sign up</h2>
 
 <div id="regFields">
-  <div id="createNewAcc"></div>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
@@ -27,6 +26,5 @@
 <div id="wordOr"></div>
 
 <div id="other_links">
-  <div id="alreadyAcc"></div>
   <%= render "links" %>
 </div>

@@ -1,6 +1,6 @@
 <h2>Sign in</h2>
 
-<div class="reg_form">
+<div id="signInFields">
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 	  <div><%= f.label :email %><br />
 	  <%= f.email_field :email %></div>
@@ -12,10 +12,10 @@
 	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
 	  <% end -%>
 
-	  <div><%= f.submit "Sign in" %></div>
+	  <div id="submit_sign_up"><%= f.submit "Sign in" %></div>
 	<% end %>
-</div>
 
-<div class="reg_form">
-	<%= render "links" %>
+	<div id="extra_links">
+		<%= render "links" %>
+	</div>
 </div>
