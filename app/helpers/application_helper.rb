@@ -68,4 +68,8 @@ module ApplicationHelper
       image_tag('no_thumbnail.png', :alt => product.name, :style => "width: 130px;")
     end
   end
+  
+  def buy_button(product)
+    button_to raw("Buy #{number_to_currency product.salesPrice}"), cart_products_path(product_id: product.id), :remote => true, :class => "buyBtn"
+  end
 end

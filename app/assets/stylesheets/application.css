@@ -365,6 +365,8 @@ body:before {
 				margin-top: 36%;
 			}
 			.buyBtn {
+			    cursor: pointer;
+			    font-size: 15px;
 				text-decoration: none;
 				color: #fff;
 				text-shadow: 1px 1px 1px #777;

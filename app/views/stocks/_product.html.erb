@@ -15,8 +15,10 @@
 	<div class="stockLevel">
 	    <%= in_stock(product.stockLevel) %>
 	</div>
-	<div class="price"><p>
-	    <a href="#" class="buyBtn">Buy <%= number_to_currency product.salesPrice %></a></p>
+	<div class="price">
+	    <p>
+	        <%= buy_button product %>
+	    </p>
 	</div>
 	<div class="clearall"></div>
 </div><!-- end .item -->

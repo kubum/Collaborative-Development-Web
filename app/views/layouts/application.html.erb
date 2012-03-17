@@ -3,7 +3,7 @@
 <head>
   <title>CollaborativeDevelopmentWeb</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag    "slider/nivo-slider", "slider/themes/default/default", :media => "all" %>
+  <%= stylesheet_link_tag    "slider/nivo-slider", "slider/themes/default/default", "jquery.jgrowl", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -30,7 +30,9 @@
         			    <% end %>
         			</p>
         			
-        			<p class="basketInfo"><%= image_tag 'icons/cart.png' %> <a href="#">Your items: 0</a></p>
+        			<p class="basketInfo" id="top_cart">
+        			    <%= render :partial => 'carts/top' %>
+        			</p>
         		</div>
 
         		<div id="logoSearchBar">

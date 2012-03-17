@@ -22,7 +22,9 @@
 			<p><%= @product.description %></p>
 		</div>
 		<div class="clearall"></div>
-		<div class="singlePrice"><a href="#" class="buyBtn">Buy <%= number_to_currency @product.salesPrice %></a></div>
+		<div class="singlePrice">
+		    <%= buy_button @product %>		    
+		</div>
 		<div class="clearall"></div>
 	</div><!-- end .singleItem -->
 	
