@@ -783,3 +783,60 @@ body:before {
     .field_with_errors input, .field_with_errors textarea {
         background: #FFD1C4;
     }
+
+
+
+/*** Registration section ***/
+#regFields {
+	margin-left: 16%;
+	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+	color: #555;
+	font-size: 0.9em;
+	padding: 10% 2% 0 2%;
+	float: left;
+	background: url("create_new_acc.png") no-repeat;
+}
+	#regFields div {
+		margin: 10px 0;
+	}
+	#regFields #submit_sign_up input {
+		font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+		font-size: 1em;
+		color: #fff;
+		width: 104px;
+		height: 36px;
+		background: url(sign_up_btn.png) no-repeat;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		margin-left: 28%;
+	}
+		#regFields #submit_sign_up input:hover {
+			background: url(sign_up_btn.png) 0 -38px;
+		}
+		#regFields #submit_sign_up input:active {
+			padding-bottom: 1px;
+			background: url(sign_up_btn.png) 0 38px;
+		}
+	#regFields input {
+		width: 250px;
+		margin: 2px 0px;
+		padding: 5px;
+		border-radius: 4px;
+		border: 1px solid #A8B0A1;
+		box-shadow: 0px 0px 1px #A8B0A1;
+	}
+
+#other_links {
+	float: left;
+	clear: right;
+	margin-left: 5%;
+	margin-bottom: 5%;
+	text-align: center;
+	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+	font-size: 1.2em;
+	padding: 22% 5% 0 5%;
+	height: 201px;
+	background: url("use_existing_acc.png") no-repeat;
+}
+/*** End registration section ***/
