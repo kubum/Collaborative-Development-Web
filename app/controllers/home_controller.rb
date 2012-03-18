@@ -19,4 +19,8 @@ class HomeController < ApplicationController
   def checkout
 
   end
+
+  def order_history
+
+  end
 end
