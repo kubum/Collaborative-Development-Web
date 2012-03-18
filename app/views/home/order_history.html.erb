@@ -1,0 +1,69 @@
+		<!--
+			Main navigation.
+			Sorting options.
+		-->
+		<div id="allNavigation">
+				<%= render :partial => "shared/nav" %>
+		</div><!-- end #allNavigation -->
+		
+		<!--
+			Container with all items.
+			Pagination.
+		-->
+		<div id="content">
+			<h1>Your orders history</h1>
+			<dl>
+				<dt><p>Order number: 1125</p> <span>14/03/2011</span><div class="clearall"></div></dt>
+				<dd>
+					<ul id="itemsTitleBar">
+						<li class="nameTitleHI">Product name</li>
+						<li class="quantityTitleHI">Quantity</li>
+						<li class="deliveryTitleHI">Delivery type</li>
+						<li class="priceTitleHI">Price</li>
+						<div class="clearall"></div>
+					</ul><!-- end #itemsTitleBar -->
+					<div class="historyItem">
+						<div class="nameHI"><h3><a href="#">FIFA</a></h3></div>
+						<div class="quantityHI"><p>1</p></div>
+						<div class="deliveryHI"><p>Dispatched</p></div>
+						<div class="priceHI"><p>&pound;17.50</p></div>
+						<div class="clearall"></div>
+					</div>
+					<div class="historyItem">
+						<div class="nameHI"><h3><a href="#">Battlefield 3</a></h3></div>
+						<div class="quantityHI"><p>1</p></div>
+						<div class="deliveryHI"><p>Downloaded</p></div>
+						<div class="priceHI"><p>&pound;17.50</p></div>
+						<div class="clearall"></div>
+					</div>
+				</dd>
+				<div class="summaryHistory">
+				<p>Total</p><div class="totalHistory">&pound;17.50</div>
+				<div class="clearall"></div>
+			</div><!-- end .summary -->
+			</dl>
+
+			<dl>
+				<dt><p>Order number: 2230</p> <span>05/01/2009</span><div class="clearall"></div></dt>
+				<dd>
+					<ul id="itemsTitleBar">
+						<li class="nameTitleHI">Product name</li>
+						<li class="quantityTitleHI">Quantity</li>
+						<li class="deliveryTitleHI">Delivery type</li>
+						<li class="priceTitleHI">Price</li>
+						<div class="clearall"></div>
+					</ul><!-- end #itemsTitleBar -->
+					<div class="historyItem">
+						<div class="nameHI"><h3><a href="#">GTA IV</a></h3></div>
+						<div class="quantityHI"><p>1</p></div>
+						<div class="deliveryHI"><p>Dispatched</p></div>
+						<div class="priceHI"><p>&pound;24.99</p></div>
+						<div class="clearall"></div>
+					</div>
+				</dd>
+				<div class="summaryHistory">
+				<p>Total</p><div class="totalHistory">&pound;24.99</div>
+				<div class="clearall"></div>
+			</div><!-- end .summary -->
+			</dl>
+		</div><!-- end #content -->
