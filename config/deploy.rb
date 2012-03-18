@@ -25,8 +25,9 @@ role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations
 #after "deploy:update_code", :copy_database_config
 
 task :copy_database_config, roles => :app do
- db_config = "#{shared_path}/database.yml"
- run "cp #{db_config} #{release_path}/config/database.yml"
+ run <<-CMD
+   ln -nfs #{shared_path}/database.yml #{release_path}/config/database.yml
+ CMD
 end
 
 set :unicorn_conf, "/etc/unicorn/university.insight.rb"
