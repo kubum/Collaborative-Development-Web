@@ -1,33 +1,38 @@
 CollaborativeDevelopmentWeb::Application.routes.draw do
+  # Active Admin
+  ActiveAdmin.routes(self)
+  devise_for :web_administrators, ActiveAdmin::Devise.config
+  
+  # Customers
   devise_for :customers, :controllers => { :sessions => "sessions" }
 
-  ActiveAdmin.routes(self)
-
-  devise_for :web_administrators, ActiveAdmin::Devise.config
-
+  # Default page
   root :to => 'home#index'
   
+  # About
   get  'about', :to => 'about#index', :as => :about
   post 'feedback_send', :to => 'about#feedback_send'
   
+  # Pages
   get 'home/single', :to => 'home#single'
   get 'home/shop', :to => 'home#shop'
   get 'home/products', :to => 'home#products'
-
   get 'home/delivery_type', :to => 'home#delivery_type'
-  #get 'shop/products', :to => 'shop#products'
-  #get 'shop/products', :to => 'shop#products'
 
+  # Stock
   get 'stocks(/promotion/:featured)(/category/:category_id)(/sort/:sort)(/order/:order)', :to => "stocks#index", :as => :stocks_sort
+  # Stock search
+  get 'stocks/search', :to => 'stocks#search'
+  # Stock REST
+  resources :stocks, :only => [:index, :show] do
+    get :image
+  end
 
+  # Images for promotions
   resources :promotions, :only => [:image] do
     get :image
   end
   
-  get 'stocks/search', :to => 'stocks#search'
-  resources :stocks, :only => [:index, :show] do
-    get :image
-  end
-  
+  # Adding products to the cart
   resources :cart_products, :only => [:create]
 end
