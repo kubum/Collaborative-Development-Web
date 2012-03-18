@@ -14,9 +14,7 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   post 'feedback_send', :to => 'about#feedback_send'
   
   # Pages
-  get 'home/single', :to => 'home#single'
   get 'home/shop', :to => 'home#shop'
-  get 'home/products', :to => 'home#products'
   get 'home/delivery_type', :to => 'home#delivery_type'
 
   # Stock

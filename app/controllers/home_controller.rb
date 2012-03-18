@@ -3,20 +3,8 @@ class HomeController < ApplicationController
     @promotions = Promotion.all
     @featured   = Stock.where(:featured => true).limit(3)
   end
-  
-  def single
-
-  end
 
   def shop
-
-  end
-
-  def products
-
-  end
-
-  def registration
 
   end
 
