@@ -35,5 +35,6 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   resources :cart_products, :only => [:create, :destroy, :update]
   
   # Cart
+  get 'carts/delivery', :to => "carts#delivery", :as => :carts_delivery
   resources :carts, :only => [:index]  
 end

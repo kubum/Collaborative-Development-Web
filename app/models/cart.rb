@@ -10,7 +10,7 @@ class Cart < ActiveRecord::Base
     if current_product
       current_product.quantity += 1
     else
-      current_product = cart_products.build(stock_id: stock_id)
+      current_product = cart_products.create!(stock_id: stock_id, quantity: 1)
     end
     
     current_product

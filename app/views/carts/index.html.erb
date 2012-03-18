@@ -80,7 +80,7 @@
 		<p>Summary</p><div class="sumAmount"><%= number_to_currency @current_cart.total_price %></div>
 		<div class="clearall"></div>
 		
-		<a href="#" class="continue">Delivery type &#62;</a>
+		<%= link_to raw("Delivery type &#62;"), carts_delivery_path, :class => :continue %>
 		<div class="clearall"></div>
 	</div><!-- end .summary -->
 	
