@@ -1,0 +1,88 @@
+<!--
+	Main navigation.
+	Sorting options.
+-->
+<div id="allNavigation">
+		<%= render :partial => "shared/nav" %>
+</div><!-- end #allNavigation -->
+
+<!--
+	Container with all items.
+	Pagination.
+-->
+<div id="content">
+    <% if @current_cart.cart_products.empty? %>
+        <%= show_message "No product in the cart" %>
+    <% else %>
+	<ul class="buyStages">
+		<li class="stageDone">
+			<div class="stageImg">1</div>
+			<div class="stageName itemsSelection">Items selection</div>
+		</li>
+		<li>
+			<div class="stageImg">2</div>
+			<div class="stageName deliveryType">Delivery type</div>
+		</li>
+		<li>
+			<div class="stageImg">3</div>
+			<div class="stageName">Payment</div>
+		</li>
+		<li>
+			<div class="stageImgCheckout">4</div>
+			<div class="stageName checkOutPos">Checkout</div>
+		</li>
+		<div class="clearall"></div>
+	</ul>
+	
+	<ul id="itemsTitleBar">
+		<li class="nameDesc">Name/Description</li>
+		<li class="sortStock shopStockLevelTitle">Stock level</li>
+		<li class="shopPriceTitle">Price</li>
+		<li class="shopQuantityTitle">Quantity</li>
+		<li class="shopRemoveTitle">Remove</li>
+		<div class="clearall"></div>
+	</ul><!-- end #itemsTitleBar -->
+	
+	<% @current_cart.cart_products.each do |cart_product| %>
+	<div class="item">
+		<div class="nameDescImg">
+			<div class="imgDownlds">
+    			<%= product_image cart_product.stock %>
+    			<p class="downloadNum"><%= cart_product.stock.noOfDownloads %> downloads</p>
+			</div>
+    		<div class="nameDescription">
+    			<h3><%= link_to cart_product.stock.name, stock_path(cart_product.stock) %></h3>
+    			<p>
+    			    <%= show_description cart_product.stock.description %>
+    			    <%= link_to "read more", stock_path(cart_product.stock) %>
+    			</p>
+    		</div>				
+		</div>
+		<div class="stockLevel shopStockLevel">
+		    <%= in_stock(cart_product.stock.stockLevel) %>
+		</div><!-- class="outStock" -->
+		<div class="price shopPrice"><p> <%= number_to_currency cart_product.total_price %></p></div>
+		<div class="shopQuantity">
+		    <%= form_for(cart_product, :class => "quantity_form") do |f| %>
+		        <%= f.text_field :quantity %>	        
+		    <% end -%>
+		</div>
+		<div class="shopRemove">
+		    <p>
+		        <%= button_to "Remove", cart_product_path(cart_product), method: :delete %>
+		    </p>
+		</div>
+		<div class="clearall"></div>
+	</div><!-- end .item -->
+	<% end %>
+	
+	<div class="summary">
+		<p>Summary</p><div class="sumAmount"><%= number_to_currency @current_cart.total_price %></div>
+		<div class="clearall"></div>
+		
+		<a href="#" class="continue">Delivery type &#62;</a>
+		<div class="clearall"></div>
+	</div><!-- end .summary -->
+	
+	<% end %>
+</div><!-- end #content -->

@@ -32,5 +32,8 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   end
   
   # Adding products to the cart
-  resources :cart_products, :only => [:create]
+  resources :cart_products, :only => [:create, :destroy, :update]
+  
+  # Cart
+  resources :carts, :only => [:index]  
 end

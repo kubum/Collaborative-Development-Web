@@ -1,2 +1,4 @@
 <%= image_tag 'icons/cart.png' %> 
-<a href="#"><%= pluralize(@current_cart.total_count, 'item', 'items') %> for <%= number_to_currency @current_cart.total_price %></a>
+<a href="<%= carts_path %>">
+    <%= pluralize(@current_cart.total_count, 'item', 'items') %> for <%= number_to_currency @current_cart.total_price %>
+</a>
