@@ -14,9 +14,6 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   post 'feedback_send', :to => 'about#feedback_send'
   
   # Pages
-  get 'home/shop', :to => 'home#shop'
-  get 'home/delivery_type', :to => 'home#delivery_type'
-  get 'home/payment', :to => 'home#payment'
   get 'home/checkout', :to => 'home#checkout'
 
   # Stock
@@ -37,6 +34,10 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   resources :cart_products, :only => [:create, :destroy, :update]
   
   # Cart
-  get 'carts/delivery', :to => "carts#delivery", :as => :carts_delivery
-  resources :carts, :only => [:index]  
+  get  'carts/delivery', :to => "carts#delivery", :as => :carts_delivery
+  post 'carts/delivery', :to => "carts#delivery_address"
+  get  'carts/payment',  :to => "carts#payment",  :as => :carts_payment
+  get  'carts/checkout', :to => "carts#checkout", :as => :carts_checkout
+  resources :carts,  :only => [:index]  
+  resources :orders, :only => [:create]
 end

@@ -33,29 +33,42 @@
 	
 	<div class="delivery_type">
 		<h1>Type in your address:</h1>
-		<form>
-			<div class="inputElement">
-		        <div class="label"><label for="stAddress">Street Address</label></div>
-		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
-		    </div>
+		<%= form_for(@address, :url => carts_delivery_path) do |f| %>
+    		<% if @address.errors.any? %>
+              <div class="error" id="error_explanation">
+                <h2><%= pluralize(@address.errors.count, "error") %> prohibited this cart from being saved:</h2>
 
-		    <div class="inputElement">
-		        <div class="label"><label for="stAddress">Town/City</label></div>
-		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
-		    </div>
-
-		    <div class="inputElement">
-		        <div class="label"><label for="stAddress">Country</label></div>
-		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
-		    </div>
-
-		    <div class="inputElement">
-		        <div class="label"><label for="stAddress">Postcode</label></div>
-		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
-		    </div>
-		    <a href="#" class="goBack">&#60; Item selection</a>
-			<a href="#" class="continue">Payment &#62;</a>
-		</form>
+                <ul>
+                <% @address.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+        
+    		<div class="inputElement">
+    		    <div class="label"><%= f.label :address %></div>
+        		<div class="inputfield"><%= f.text_field :address %></div>
+    	    </div>
+	    
+	    	<div class="inputElement">
+    		    <div class="label"><%= f.label :city %></div>
+        		<div class="inputfield"><%= f.text_field :city %></div>
+    	    </div>
+    	    
+	    	<div class="inputElement">
+    		    <div class="label"><%= f.label :postcode %></div>
+        		<div class="inputfield"><%= f.text_field :postcode %></div>
+    	    </div>
+    	    
+    	    <div class="inputElement">
+    		    <div class="label"><%= f.label :mobile_number %></div>
+        		<div class="inputfield"><%= f.text_field :mobile_number %></div>
+    	    </div>
+    	    
+    	    <%= link_to raw("&#60; Item selection"), carts_path, :class => "goBack" %>
+    	    <%= f.submit raw("Payment &#62;"), :class => "continue" %>
+		<% end %>
 		<div class="clearall"></div>
 	</div><!-- end .delivery_type -->
 	
