@@ -43,9 +43,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the web server
-group :production do
-  gem 'unicorn'
-end
+gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano'
