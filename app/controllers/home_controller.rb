@@ -11,4 +11,12 @@ class HomeController < ApplicationController
   def delivery_type
 
   end
+
+  def payment
+
+  end
+
+  def checkout
+
+  end
 end

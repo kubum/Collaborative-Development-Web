@@ -1,0 +1,41 @@
+		<!--
+			Main navigation.
+			Sorting options.
+		-->
+		<div id="allNavigation">
+			<%= render :partial => "shared/nav" %>
+		</div><!-- end #allNavigation -->
+		
+		<!--
+			Container with all items.
+			Pagination.
+		-->
+		<div id="content">
+			<ul class="buyStages">
+				<li class="stageDone">
+					<div class="stageImg">1</div>
+					<div class="stageName itemsSelection">Items selection</div>
+				</li>
+				<li class="stageDone">
+					<div class="stageImg">2</div>
+					<div class="stageName deliveryType">Delivery</div>
+				</li>
+				<li class="stageDone">
+					<div class="stageImg">3</div>
+					<div class="stageName">Payment</div>
+				</li>
+				<li class="stageDone">
+					<div class="stageImgCheckout">4</div>
+					<div class="stageName checkOutPos">Checkout</div>
+				</li>
+				<div class="clearall"></div>
+			</ul>
+			
+			<div class="delivery_type">
+				<h1>Congratulations! You have just bought your items!</h1>
+				<div id="thank_you"></div>
+				<a href="#" class="goBack">&#60; Payment</a>
+				<div class="clearall"></div>
+			</div><!-- end .delivery_type -->
+			
+		</div><!-- end #content -->
