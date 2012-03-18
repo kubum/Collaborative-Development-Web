@@ -4,14 +4,6 @@ class HomeController < ApplicationController
     @featured   = Stock.where(:featured => true).limit(3)
   end
 
-  def shop
-
-  end
-
-  def delivery_type
-
-  end
-
   def payment
 
   end

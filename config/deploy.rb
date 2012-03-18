@@ -22,7 +22,7 @@ role :db,  "lithium.locum.ru", :primary => true # This is where Rails migrations
 
 # Если хотите поместить конфиг в shared и не хранить его в системе контроя версий - раскомментируйте следующие строки
 
-#after "deploy:update_code", :copy_database_config
+after "deploy:update_code", :copy_database_config
 
 task :copy_database_config, roles => :app do
  db_config = "#{shared_path}/database.yml"
@@ -34,7 +34,7 @@ set :unicorn_pid, "/var/run/unicorn/university.insight.pid"
 
 
 
-  set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use 1.9.3 do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use 1.9.2 do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
 
 
