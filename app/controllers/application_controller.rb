@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter do
+    @session_cart = Cart.find_by_id(session[:cart_id]) unless session[:cart_id].nil?
     @current_cart = current_cart
   end
   
