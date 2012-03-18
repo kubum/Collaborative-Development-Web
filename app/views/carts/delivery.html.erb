@@ -1,1 +1,62 @@
-xx
+<!--
+	Main navigation.
+	Sorting options.
+-->
+<div id="allNavigation">
+	<%= render :partial => "shared/nav" %>
+</div><!-- end #allNavigation -->
+
+<!--
+	Container with all items.
+	Pagination.
+-->
+<div id="content">
+	<ul class="buyStages">
+		<li class="stageDone">
+			<div class="stageImg">1</div>
+			<div class="stageName itemsSelection">Items selection</div>
+		</li>
+		<li class="stageDone">
+			<div class="stageImg">2</div>
+			<div class="stageName deliveryType">Delivery</div>
+		</li>
+		<li>
+			<div class="stageImg">3</div>
+			<div class="stageName">Payment</div>
+		</li>
+		<li>
+			<div class="stageImgCheckout">4</div>
+			<div class="stageName checkOutPos">Checkout</div> 
+		</li>
+		<div class="clearall"></div>
+	</ul>
+	
+	<div class="delivery_type">
+		<h1>Type in your address:</h1>
+		<form>
+			<div class="inputElement">
+		        <div class="label"><label for="stAddress">Street Address</label></div>
+		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+		    </div>
+
+		    <div class="inputElement">
+		        <div class="label"><label for="stAddress">Town/City</label></div>
+		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+		    </div>
+
+		    <div class="inputElement">
+		        <div class="label"><label for="stAddress">Country</label></div>
+		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+		    </div>
+
+		    <div class="inputElement">
+		        <div class="label"><label for="stAddress">Postcode</label></div>
+		        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+		    </div>
+		    <a href="#" class="goBack">&#60; Item selection</a>
+			<a href="#" class="continue">Payment &#62;</a>
+		</form>
+		<div class="clearall"></div>
+	</div><!-- end .delivery_type -->
+	
+</div><!-- end #content -->
