@@ -498,7 +498,7 @@ body:before {
 					margin-left: -13%;
 				}
 				.buyStages li .deliveryType {
-					margin-left: -11%;
+					margin-left: -4%;
 				}
 				.buyStages li .checkOutPos {
 					margin-left: -19%;
@@ -617,7 +617,7 @@ body:before {
 				border-left: 1px solid #ababab;
 				border-bottom: 1px solid #ababab;
 			}
-			.continue {
+			.continue, .goBack {
 				float: right;
 				font-family: Arial, Helvetica, Sans-serif;
 				font-size: 0.9em;
@@ -631,35 +631,48 @@ body:before {
 				background: #2993e0;
 				border: 1px solid #75c3ff;
 			}
-			.continue:hover {
+			.continue:hover, .goBack:hover {
 				background: #0a7ed0;
 			}
-			.continue:active {
+			.continue:active, .goBack:active {
 				background: #015895;
 				color: #777;
 				text-shadow: 1px 1px 1px #333;
 			}
+			.goBack {
+				float: left;
+			}
 
 			.delivery_type {
 				padding: 0 10px;
+				font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
+				color: #555;
+				font-size: 0.9em;
+				margin-bottom: 30px;
 			}
-				.delivery_type ul li {
-					margin: 5px;
-					padding: 10px;
-					border-bottom: 1px solid #fff;
+				.delivery_type div.label, .delivery_type div.label div, .delivery_type div.inputfield, .delivery_type div.inputfield div {
+					margin: 0;
+				}
+				.delivery_type div {
+					margin: 10px 0;
+					width: 265px;
 				}
 				.delivery_type h1 {
 					font-family: Georgia, Arial, Helvetica, Sans-serif;
-					font-size: 1.2em;
-					color: #777;
+					font-size: 1.4em;
+					color: #555;
 					border: none;
 					margin-top: 50px;
 					text-shadow: 1px 1px 1px #fff;
+					border-bottom: 1px solid #aaa;
 				}
-				.delivery_type label {
-					font-family: "Lucida Sans Unicode", "Lucida Grande", Helvetica, Sans-serif;
-					font-size: 0.9em;
-					color: #444;
+				.delivery_type input, .delivery_type input {
+					width: 250px;
+					margin: 2px 0px;
+					padding: 5px;
+					border-radius: 4px;
+					border: 1px solid #A8B0A1;
+					box-shadow: 0px 0px 1px #A8B0A1;
 				}
 	/*** END shop page ***/
 	

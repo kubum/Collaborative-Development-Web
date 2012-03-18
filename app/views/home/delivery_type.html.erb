@@ -18,7 +18,7 @@
 				</li>
 				<li class="stageDone">
 					<div class="stageImg">2</div>
-					<div class="stageName deliveryType">Delivery type</div>
+					<div class="stageName deliveryType">Delivery</div>
 				</li>
 				<li>
 					<div class="stageImg">3</div>
@@ -32,22 +32,28 @@
 			</ul>
 			
 			<div class="delivery_type">
-				<h1>Select delivery type below:</h1>
+				<h1>Type in your address:</h1>
 				<form>
-					<ul>
-						<li>
-							<input id="download" type="radio" name="delivery_type" value="download" /><label for="download"> Download files from our server</label>
-						</li>
+					<div class="inputElement">
+				        <div class="label"><label for="stAddress">Street Address</label></div>
+				        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+				    </div>
 
-						<li>
-							<input id="collect" type="radio" name="delivery_type" value="collect" /><label for="collect"> Collect items in our store</label>
-						</li>
+				    <div class="inputElement">
+				        <div class="label"><label for="stAddress">Town/City</label></div>
+				        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+				    </div>
 
-						<li>
-							<input id="dispatch" type="radio" name="delivery_type" value="dispatch" /><label for="dispatch"> Dispatch items to your address</label>
-						</li>
-						<div class="clearall"></div>
-					</ul>
+				    <div class="inputElement">
+				        <div class="label"><label for="stAddress">Country</label></div>
+				        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+				    </div>
+
+				    <div class="inputElement">
+				        <div class="label"><label for="stAddress">Postcode</label></div>
+				        <div class="inputfield"><input type="text" name="stAddress" id="stAddress" /></div>
+				    </div>
+				    <a href="#" class="goBack">&#60; Item selection</a>
 					<a href="#" class="continue">Payment &#62;</a>
 				</form>
 				<div class="clearall"></div>
