@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120317133659) do
+ActiveRecord::Schema.define(:version => 20120318234321) do
 
   create_table "Community", :id => false, :force => true do |t|
     t.string "display",              :limit => 10, :null => false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20120317133659) do
     t.string "password", :limit => 20, :null => false
   end
 
-  create_table "addresses", :primary_key => "addressID", :force => true do |t|
+  create_table "addresses", :force => true do |t|
     t.string  "address",       :limit => 30, :null => false
     t.string  "city",          :limit => 40
     t.string  "postcode",      :limit => 9,  :null => false
@@ -92,12 +92,19 @@ ActiveRecord::Schema.define(:version => 20120317133659) do
     t.string "postcode", :limit => 8,  :null => false
   end
 
+  create_table "order_products", :force => true do |t|
+    t.integer "stock_id"
+    t.integer "order_id"
+    t.integer "quantity"
+    t.decimal "price",    :precision => 12, :scale => 2
+  end
+
   create_table "orders", :force => true do |t|
-    t.integer "customer_id",                  :null => false
-    t.date    "dateOfOrder",                  :null => false
-    t.string  "orderProducts", :limit => 100, :null => false
-    t.string  "status",        :limit => 0,   :null => false
-    t.float   "value",                        :null => false
+    t.integer  "customer_id"
+    t.integer  "address_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "status",      :limit => 0
   end
 
   create_table "product_offers", :id => false, :force => true do |t|
