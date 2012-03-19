@@ -1082,7 +1082,7 @@ body:before {
 
 .history_btn input {
 	background: url("header_history_btn.png") no-repeat;
-	width: 93px;
+	width: 95px;
 }
 .history_btn input:hover {
 	background: url("header_history_btn.png") 0 -24px;
