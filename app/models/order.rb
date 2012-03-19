@@ -1,8 +1,8 @@
 class Order < ActiveRecord::Base
   belongs_to :customer
-  belongs_to :address
+  belongs_to :address, dependent: :destroy
   
-  has_many :order_products
+  has_many :order_products, dependent: :destroy
   
   STATUSES = [ "In process", "Successful", "Declined" ]
   
@@ -24,5 +24,9 @@ class Order < ActiveRecord::Base
   
   def total_price
     order_products.to_a.sum {|item| item.total_price }
+  end
+  
+  def self.statuses
+    STATUSES
   end
 end
