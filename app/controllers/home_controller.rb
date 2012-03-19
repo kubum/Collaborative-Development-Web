@@ -3,12 +3,4 @@ class HomeController < ApplicationController
     @promotions = Promotion.all
     @featured   = Stock.where(:featured => true).limit(3)
   end
-
-  def checkout
-
-  end
-
-  def order_history
-
-  end
 end

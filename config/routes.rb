@@ -14,7 +14,7 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   post 'feedback_send', :to => 'about#feedback_send'
   
   # Pages
-  get 'home/order_history', :to => 'home#order_history'
+  # empty right now
 
   # Stock
   get 'stocks(/promotion/:featured)(/category/:category_id)(/sort/:sort)(/order/:order)', :to => "stocks#index", :as => :stocks_sort

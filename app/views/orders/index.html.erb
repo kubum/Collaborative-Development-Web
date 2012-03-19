@@ -1,0 +1,53 @@
+<!--
+	Main navigation.
+	Sorting options.
+-->
+<div id="allNavigation">
+		<%= render :partial => "shared/nav" %>
+</div><!-- end #allNavigation -->
+
+<!--
+	Container with all items.
+	Pagination.
+-->
+<div id="content">
+	<h1>Your orders history</h1>
+	<% if @orders.nil? %>
+	    <%= show_message "You have not any orders" %>
+	<% else %>
+	    <% @orders.each do |order| %>
+        	<dl>				
+        		<dt>
+        		    <p>Order number: <strong><%= order.id %></strong> &#124; </p> 
+        		    <p class="order_status">&#32; <%= order.status %></p>
+        		    <span><%= order.created_at.strftime("%d.%m.%Y %H:%M:%S") %></span>
+        		    <div class="clearall"></div>
+        		</dt>
+        		<dd>
+        			<ul id="itemsTitleBar">
+        				<li class="nameTitleHI">Product name</li>
+        				<li class="quantityTitleHI">Quantity</li>
+        				<li class="deliveryTitleHI">Delivery type</li>
+        				<li class="priceTitleHI">Price</li>
+        				<div class="clearall"></div>
+        			</ul><!-- end #itemsTitleBar -->
+        			<% order.order_products.each do |order_product| %>
+        			<div class="historyItem">
+        				<div class="nameHI">
+        				    <h3><%= link_to order_product.stock.name, stock_path(order_product.stock) %></h3>
+        				</div>
+        				<div class="quantityHI"><p><%= order_product.quantity %></p></div>
+        				<div class="deliveryHI"><p><%= order_product.stock.delivery.capitalize %></p></div>
+        				<div class="priceHI"><p><%= number_to_currency order_product.price %></p></div>
+        				<div class="clearall"></div>
+        			</div>
+        		    <% end %>
+        		</dd>
+        		<div class="summaryHistory">
+        		<p>Total</p><div class="totalHistory"><%= number_to_currency order.total_price %></div>
+        		<div class="clearall"></div>
+        	</div><!-- end .summary -->
+        	</dl>
+        <% end %>
+	<% end %>
+</div><!-- end #content -->
