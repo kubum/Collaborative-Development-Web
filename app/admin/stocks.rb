@@ -30,13 +30,12 @@ ActiveAdmin.register Stock do
   
   form do |f|
     f.inputs "Product details", :multipart => true do
-      f.input :id
       f.input :name
       f.input :salesPrice
       f.input :unitPrice
       f.input :description
-      f.input :delivery
-      f.input :platform
+      f.input :delivery, :as => :select, :collection => ['PHYSICAL','DOWNLOAD','BOTH'], :include_blank => false
+      f.input :platform, :as => :select, :collection => ['XBOX','PS3','WII','PC','DS'], :include_blank => false
       f.input :stockLevel
       f.input :reorderLevel
       f.input :noOfDownloads

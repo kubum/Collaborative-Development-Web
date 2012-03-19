@@ -11,6 +11,9 @@ class Order < ActiveRecord::Base
   
   def transfer_items_from_cart(cart)
     cart.cart_products.each do |cart_product|
+      cart_product.stock.total_sales += 1
+      cart_product.stock.save!
+      
       OrderProduct.create!(
         :order => self, 
         :stock => cart_product.stock, 
