@@ -24,10 +24,13 @@
                 		        <%= current_customer.last_name %> 
                 		        (<%= current_customer.email %>).                 		    
                 		    <div class="editAcc_btn">
-                                <%= button_to "Edit account", edit_customer_registration_path, :form_class => "sign_form", :method => :get %>	    
+                                <%= button_to "Edit account", edit_customer_registration_path, :form_class => "sign_form", :method => :get %>
+                            </div>
+                            <div class="history_btn">
+                                <%= button_to "Orders history", orders_path, :form_class => "sign_form", :method => :get %>
                             </div>
                     		<div class="signInOrLogOut_btn">
-                                <%= button_to "Log out", destroy_customer_session_path, :form_class => "sign_form", :method => :delete %>		     
+                                <%= button_to "Log out", destroy_customer_session_path, :form_class => "sign_form", :method => :delete %>
                             </div>
         			    <% else %>
                             <div class="signInOrLogOut_btn">

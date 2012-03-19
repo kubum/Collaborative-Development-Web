@@ -330,6 +330,13 @@ body:before {
 				margin-bottom: 30px;
 			}
 
+			dt p strong {
+				font-weight: bold;
+			}
+			.order_status {
+				color: #c3e3ff;
+				padding: 0 5px;
+			}
 			dt {
 				background: #777;
 				padding: 10px 10px;
@@ -1054,35 +1061,47 @@ body:before {
 
 /*** END restore password section ***/
 
-.signInOrLogOut_btn input, .editAcc_btn input {
+.signInOrLogOut_btn input, .editAcc_btn input, .history_btn input {
 	font-family: "Lucida Grande", Arial, "MS Trebuchet", sans-serif;
 	font-size: 0.8em;
 	color: #fff;
 	width: 55px;
 	height: 21px;
-	background: url(header_login_btn.png) no-repeat;
+	background: url("header_login_btn.png") no-repeat;
 	border: none;
 	margin-left: 0;
 	text-align: center;
 }
 .signInOrLogOut_btn input:hover {
-	background: url(header_login_btn.png) 0 -24px;
+	background: url("header_login_btn.png") 0 -24px;
 }
 .signInOrLogOut_btn input:active {
 	padding-bottom: 1px;
-	background: url(header_login_btn.png) 0 21px;
+	background: url("header_login_btn.png") 0 21px;
+}
+
+.history_btn input {
+	background: url("header_history_btn.png") no-repeat;
+	width: 95px;
+}
+.history_btn input:hover {
+	background: url("header_history_btn.png") 0 -24px;
+}
+.history_btn input:active {
+	padding-bottom: 1px;
+	background: url("header_history_btn.png") 0 21px;
 }
 
 .editAcc_btn input {
-	background: url(header_edit_btn.png) no-repeat;
+	background: url("header_edit_btn.png") no-repeat;
 	width: 83px;
 }
 .editAcc_btn input:hover {
-	background: url(header_edit_btn.png) 0 -24px;
+	background: url("header_edit_btn.png") 0 -24px;
 }
 .editAcc_btn input:active {
 	padding-bottom: 1px;
-	background: url(header_edit_btn.png) 0 21px;
+	background: url("header_edit_btn.png") 0 21px;
 }
 
 
