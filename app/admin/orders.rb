@@ -3,7 +3,7 @@ ActiveAdmin.register Order do
   filter :updated_at
   filter :status, :as => :select, :collection => Order.statuses
   
-  actions :index, :show, :edit, :destroy
+  actions :index, :show, :update, :edit, :destroy
   
   index do
     column :id
