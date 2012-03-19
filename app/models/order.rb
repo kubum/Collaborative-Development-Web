@@ -21,4 +21,8 @@ class Order < ActiveRecord::Base
       cart_product.destroy
     end
   end
+  
+  def total_price
+    order_products.to_a.sum {|item| item.total_price }
+  end
 end

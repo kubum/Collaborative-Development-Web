@@ -14,7 +14,6 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   post 'feedback_send', :to => 'about#feedback_send'
   
   # Pages
-  get 'home/checkout', :to => 'home#checkout'
   get 'home/order_history', :to => 'home#order_history'
 
   # Stock
@@ -40,5 +39,5 @@ CollaborativeDevelopmentWeb::Application.routes.draw do
   get  'carts/payment',  :to => "carts#payment",  :as => :carts_payment
   get  'carts/checkout', :to => "carts#checkout", :as => :carts_checkout
   resources :carts,  :only => [:index]  
-  resources :orders, :only => [:create]
+  resources :orders, :only => [:index, :create]
 end

@@ -1,4 +1,11 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_customer!
+  
+  # GET /orders
+  def index
+    @orders = current_customer.orders.order("id DESC")    
+  end
+  
   # POST /orders
   def create
     begin 

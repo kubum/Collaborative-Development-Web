@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_filter :authenticate_customer!, :only => [:delivery]
+  before_filter :authenticate_customer!, :only => [:delivery, :delivery_address, :payment, :checkout]
   
   def index
     
