@@ -49,9 +49,7 @@ gem 'unicorn'
 gem 'capistrano'
 
 # JavaScript Runtime
-group :production do
-  gem 'execjs'
-end
+gem 'execjs'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
