@@ -50,8 +50,7 @@ gem 'capistrano'
 
 # JavaScript Runtime
 group :production do
-  gem 'therubyracer'
-  gem 'execjs'  
+  gem 'execjs'
 end
 
 # To use debugger

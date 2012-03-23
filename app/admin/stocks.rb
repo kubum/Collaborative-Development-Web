@@ -23,7 +23,7 @@ ActiveAdmin.register Stock do
     attributes_table do
       row :id
       row :image do
-        image_tag(stock_image_path(product), :style => "width: 600px;")
+        image_tag(stock_image_path(product))
       end
     end
   end
